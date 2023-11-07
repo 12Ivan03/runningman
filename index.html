@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>RunningMan</title>
+</head>
+<body>
+    <main>
+        <!-- Start-screen -->
+        <div id="start-screen">
+
+            <div id="opening-screen">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC2d95xflSVIBQhLHu7bKaF7kykyGQzCp14g&usqp=CAU" alt="pic-of-the-game">
+                <br>
+                <!-- <label for="player-name">Player name:</label> -->
+                <input type="text" maxlength="15" value="Player's name">
+                <button id="start">Start</button>
+                <p>Put on your running shoes, and let's start this race!</p></div>
+
+                <div id="instructions">
+                    <h1>Game instructions</h1>
+                    <p>Running Man Adventure</p>
+
+                    <div class="instruction-info-buttons">
+                        <p>Welcome to the Running Man Adventure game! In this fast-paced race, your goal is to guide the running man through various challenges and obstacles.</p>
+
+                        <div class="button-instruction">
+                            <p> Use the following keys to control your character:</p>
+                                <div>
+                                    <img src="./Image/arrows png.png" alt="keyboard arrrows">
+                                </div>
+                                <div>
+                                    <img src="./Image/space png.png" alt="spacebar">
+                                </div>
+                        </div>
+                    </div>
+                    <button id="start-game">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-container">
+            <div>
+                <p>Health: <span id="health">100</span>%</p>
+                <p>Money: $<span id="money">25</span></p>
+                <p>Speed: <span id="speed">0</span>Klm/sec</p>
+                <p>Distance: <span id="distance">20</span>Klm</p>
+            </div>
+
+            <div id="game-screen"></div>
+
+            <div id="next-level-screen-2">
+                <p>Amazing! Your adventure doesn't end here. Get ready for the next level.</p>
+                <button id="level2">Level 2</button>
+            </div>
+
+            <div id="next-level-screen-3">
+                <p>Impressive! You're moving up. Ready for the next and final challenge?</p>
+                <button id="level3">Level 3</button>
+            </div>
+
+        </div>
+
+        <div id="game-end">
+
+            <div class="win-game-end">
+
+                <img src="" alt="">
+
+                <div>
+                    <p>Health: <span id="health">100</span></p>
+                    <p>$ <span id="money">0</span></p>
+                    <p>Speed <span id="speed">0klm</span></p>
+                    <p>Distance <span id="distance">40lkm</span></p>
+                </div>
+
+                <div>
+                    <h2>You Won</h2>
+                    <p>Congratulations! Click 'Restart' to play again.</p>
+                    <button id="start-again">Restart</button>
+                </div>
+                
+            </div>
+
+            <div class="lose-game-end">
+                <!-- <img src="" alt=""> -->
+                <h2>Game Over</h2>
+                <br>
+                <p>Better luck next time. Hit 'Restart' and keep running.</p>
+                <button id="restart-button"> Restart</button>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script type="module" src="./js/game.js"></script>
+
+</body>
+</html>
