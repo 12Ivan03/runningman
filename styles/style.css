@@ -39,7 +39,7 @@ body {
 
 #instructions {
 /* To display chagne display to flex */
-    display: none;
+    display: flex;
 
     flex-direction: column;
     align-items: center;
@@ -49,7 +49,7 @@ body {
     background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
     background-size: cover;
     background-position: center;
-    
+    overflow: scroll;
 }
 
 #instructions h1 {
@@ -109,7 +109,7 @@ body {
 
 #level-or-game-end {
 /* To display chagne display to flex */
-    display: flex;
+    display: none;
     
     flex-direction: column;
     align-items: center;
@@ -124,7 +124,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
-    font-weght: 600;
+    font-weight: 600;
     font-size: x-large;
 }
 
