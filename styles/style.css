@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     font-size: 16px;
     font-family:'Courier New', Courier, monospace;
 }
@@ -11,8 +9,6 @@ body {
     display: block;
 }
 
-
-
 #opening-screen {
     display: block;
 }
@@ -21,7 +17,6 @@ body {
     display: none;
     visibility: hidden;
 }
-
 
 #game-container {
     display: none;
@@ -34,10 +29,6 @@ body {
 /* ^ quicker access ^ */
 
 /* Start Game Intro I */
-
-
-
-
 
 
 
