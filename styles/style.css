@@ -5,54 +5,61 @@ body {
     font-family:'Courier New', Courier, monospace;
 }
 
-/* display blocks... for quicker access */
 
-#start-screen {
-    display: block;
-}
-
-
+/* Start Game Intro - screen I */
 
 #opening-screen {
-    display: block;
+/* To display chagne display to flex */
+    display: none;
+
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5rem;
+    background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
+    background-position: bottom;
+    background-size: cover;
+    height: 30rem;
 }
+
+#opening-screen button {
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: x-large;
+    margin-bottom: 7.5rem;
+}
+
+#opening-screen p {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+/* Instruction Intro screen - II */
 
 #instructions {
+/* To display chagne display to flex */
     display: none;
-    visibility: hidden;
-}
 
-
-#game-container {
-    display: none;
-}
-
-#game-end {
-    display: none;
-}
-
-/* ^ quicker access ^ */
-
-/* Start Game Intro I */
-
-
-
-
-
-
-
-/* Instruction Intro II */
-
-#instructions {
-    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
-    margin: 0 5rem;
+    height: 30rem;
+    background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
+    background-size: cover;
+    background-position: center;
+    
 }
 
 #instructions h1 {
     text-align: center;
+    font-size: 3rem;
+}
+
+#instructions p {
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 
 .instruction-info-buttons {
@@ -87,4 +94,44 @@ body {
     margin-top: 1rem;
     font-weight: 700;
     font-size: larger;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+/* game container - screen III */
+
+#game-container {
+    display: none;
+}
+
+/* next-levels or game over - screen IV */
+
+#level-or-game-end {
+/* To display chagne display to flex */
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../Image/end-screen.jpeg);
+    background-size: cover;
+    background-position: top;
+}
+
+#level-or-game-end div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+#level-or-game-end div:first-of-type button {
+    width: 30rem;
+}
+
+#level-or-game-end div:last-of-type {
+    margin-bottom: 3rem;
 }
