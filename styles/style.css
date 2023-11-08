@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     font-size: 16px;
     font-family:'Courier New', Courier, monospace;
 }
@@ -16,7 +14,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-top: 5rem;
-    background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
+    background-image: url(../images/athletics-track.jpeg);
     background-position: bottom;
     background-size: cover;
     height: 30rem;
@@ -46,7 +44,7 @@ body {
     justify-content: center;
     flex-wrap: nowrap;
     height: 30rem;
-    background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
+    background-image: url(../images/athletics-track.jpeg);
     background-size: cover;
     background-position: center;
     
@@ -74,7 +72,7 @@ body {
 }
 
 .button-instruction {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }
@@ -102,25 +100,44 @@ body {
 /* game container - screen III */
 
 #game-container {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 20px 0px;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
+
+#game-screen {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    background-image: url(../images/perspective.jpg);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+    width: 100vw;
+    height: 100vh;
+  }
+
+ 
 
 /* next-levels or game over - screen IV */
 
 #level-or-game-end {
 /* To display chagne display to flex */
-    display: flex;
+    display: none;
     
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(../Image/end-screen.jpeg);
+    background-image: url(../images/end-screen.jpeg);
     background-size: cover;
     background-position: top;
 }
 
 #level-or-game-end div:first-of-type {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
