@@ -45,10 +45,9 @@
             
         <!-- Game Screen -->
         <div id="game-container">
-            <div>
+            <div id="skyline">
                 <!-- <img src="./images/beautiful-landscape-view-ocean.jpg"/> -->
                 <div class="live-stats">
-                    <h2>Stats</h2>
                     <p>Health: <span id="health">100</span> %</p>
                     <p>Resources: $ <span id="money">0</span></p>
                 </div>
@@ -58,7 +57,10 @@
                 </div>
             </div>
             <!-- #game-screen is initially hidden using CSS style display: none -->
-            <div id="game-screen"></div> <!-- should load game screen dynamically with a perspective background -->
+            <div id="game-screen">
+                <img src="../images/road.jpg" alt="road image"/>
+                <img id="player" src="../images/player.png" alt="player"/>
+            </div> <!-- should load game screen dynamically with a perspective background -->
         </div>
 
         <!-- Game End Screen -->
