@@ -188,10 +188,10 @@ body {
  
   #player {
     position: absolute;
-    top: 122px;
-    left: 291px;
-    width: 140px;
-    height: 136px;
+    top: 240px;
+    left: 445px;
+    width: 288px;
+    height: 270px;
     z-index: 1;
   }
 
