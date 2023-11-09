@@ -64,7 +64,7 @@ body {
 #instructions h1 {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin: 10rem 0 2rem 0;
 }
 
 #instructions p {
@@ -135,7 +135,7 @@ body {
 .instruction, button {
     width: 17rem;
     height: 3rem;
-    margin-top: 1rem;
+    margin-bottom: 6rem;
     font-weight: 700;
     font-size: larger;
     border-radius: 2rem;
