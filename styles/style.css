@@ -8,7 +8,7 @@ body {
 
 #opening-screen {
 /* To display chagne display to flex */
-    display: none;
+    display: flex;
 
     flex-direction: column;
     justify-content: flex-end;
@@ -24,7 +24,15 @@ body {
     border-radius: 2rem;
     font-weight: 600;
     font-size: x-large;
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
+}
+
+#start{
+    border: 0px
+}
+
+#start:hover {  
+    opacity: 0.5;
 }
 
 #opening-screen p {
@@ -50,6 +58,7 @@ body {
     background-position: center;
     width: 100vw;
     height: 100vh;    
+    font-weight: 600;
 }
 
 #instructions h1 {
@@ -60,8 +69,16 @@ body {
 
 #instructions p {
     font-size: 1.4rem;
-    font-weight: 400;
     margin-bottom: 2rem;
+}
+
+
+#start-game{
+    border: 0px
+}
+
+#start-game:hover {  
+    opacity: 0.5;
 }
 
 .instruction-info-buttons {
@@ -107,7 +124,6 @@ body {
     width: 20vw;
 }
 
-
 /* instruction btn C */
 .button-instruction div:last-of-type img {
     height: 2rem;
@@ -130,12 +146,13 @@ body {
 /* game container - screen III */
 
 #game-container {
-    display: block;
+    display: none;
     flex-direction: column;
     width: 100vw;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    font-weight: 600;
 }
 
 #skyline {
@@ -213,4 +230,22 @@ body {
 
 #level-or-game-end div:last-of-type {
     margin-bottom: 3rem;
+}
+
+/* buttons */
+
+#level-or-game-end div:first-of-type button {
+    border: 0px;
+}
+
+#level-or-game-end div:last-of-type button {
+    border: 0px;
+}
+
+#level-or-game-end div:first-of-type button:hover {
+    opacity: 0.5;
+}
+
+#level-or-game-end div:last-of-type button:hover {
+    opacity: 0.5;
 }
