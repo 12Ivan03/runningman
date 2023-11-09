@@ -8,29 +8,30 @@ body {
 
 #opening-screen {
 /* To display chagne display to flex */
-    display: none;
+    display: flex;
 
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 5rem;
     background-image: url(../images/athletics-track.jpeg);
     background-position: bottom;
     background-size: cover;
-    height: 30rem;
+    width: 100vw;
+    height: 100vh;
 }
 
 #opening-screen button {
     border-radius: 2rem;
     font-weight: 600;
     font-size: x-large;
-    margin-bottom: 7.5rem;
+    margin-bottom: 20rem;
 }
 
 #opening-screen p {
     text-align: center;
     font-size: xx-large;
     font-weight: 600;
+    margin-bottom: 3rem;
 }
 
 /* Instruction Intro screen - II */
@@ -47,23 +48,27 @@ body {
     background-image: url(../images/athletics-track.jpeg);
     background-size: cover;
     background-position: center;
-    
+    width: 100vw;
+    height: 100vh;    
 }
 
 #instructions h1 {
     text-align: center;
     font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 #instructions p {
     font-size: 1.4rem;
     font-weight: 400;
+    margin-bottom: 2rem;
 }
 
 .instruction-info-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 0 1rem;
+    margin: 0 2em;
+    height: 60vh;
 }
 
 .instruction-info-buttons p {
@@ -72,18 +77,43 @@ body {
 }
 
 .button-instruction {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
+.button-instruction div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* instruction btn arrow */
 .button-instruction div:first-of-type img {
     height: 3rem;
     margin-bottom: 1rem;
 } 
 
+.button-instruction div:first-of-type p {
+    width: 20vw;
+}
+
+/* instruction btn space */
+.button-instruction div:nth-child(3) img{
+    height: 1.5rem;
+}
+
+.button-instruction div:nth-child(3) p {
+    width: 20vw;
+}
+
+
+/* instruction btn C */
 .button-instruction div:last-of-type img {
     height: 2rem;
+}
+.button-instruction div:last-of-type p {
+    width: 20vw;
 }
 
 .instruction, button {
@@ -100,7 +130,7 @@ body {
 /* game container - screen III */
 
 #game-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100vw;
     padding: 20px 0px;
@@ -134,15 +164,21 @@ body {
     background-image: url(../images/end-screen.jpeg);
     background-size: cover;
     background-position: top;
+    width: 100vw;
+    height: 100vh;
 }
 
 #level-or-game-end div:first-of-type {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
     font-weight: 600;
-    font-size: x-large;
+    font-size: xx-large;
+}
+
+#level-or-game-end div:first-of-type div:first-of-type p{
+    margin: 1rem 0 2rem 0;
 }
 
 #level-or-game-end div:first-of-type button {
