@@ -30,6 +30,8 @@ class Player {
         this.element.style.left = `${this.left}vw`;
         this.element.style.top = `${this.top}vh`;
         // console.log('player position', this.element.getBoundingClientRect())
+        this.directionX = 0;
+        this.directionY = 0;
     }
 
 }
