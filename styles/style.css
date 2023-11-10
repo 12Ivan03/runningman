@@ -32,12 +32,16 @@ body {
 }
 
 #start:hover {  
+<<<<<<< HEAD
     opacity: 0.9;
     background-color: rgb(158, 255, 13);
     color: rgb(94, 12, 12);
     font-weight: 800;
     cursor: pointer;
     border: solid 3px #fff;
+=======
+    opacity: 0.5;
+>>>>>>> master
 }
 
 #opening-screen p {
@@ -83,12 +87,16 @@ body {
 }
 
 #start-game:hover {  
+<<<<<<< HEAD
     opacity: 0.9;
     cursor: pointer;
     background-color: rgb(158, 255, 13);
     color: rgb(94, 12, 12);
     border: solid 5px #fff;
     font-weight: 800;
+=======
+    opacity: 0.5;
+>>>>>>> master
 }
 
 .instruction-info-buttons {
@@ -158,6 +166,7 @@ body {
 #game-container {
     display: none;
     flex-direction: column;
+<<<<<<< HEAD
     justify-content: center;
     font-weight: 600;
 }
@@ -173,12 +182,33 @@ body {
     width: 100vw;
 }
 
+=======
+    width: 100vw;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-weight: 600;
+}
+
+#skyline {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-image: url(../images/beautiful-landscape-view-ocean.jpg);
+    background-size: cover;
+    background-position: bottom;
+    height: 50vh;
+    width: 100vw;
+}
+
+>>>>>>> master
 .live-stats {
     padding: 20px;
 }
 
 #game-screen {
     display: block;
+<<<<<<< HEAD
     /* background-image: url(../images/road.jpg); */
     background-size: cover;
     width: 100vw;
@@ -217,6 +247,15 @@ body {
     100% {
       background-position: 0 50px;
     }
+=======
+    overflow: hidden;
+    position: absolute;
+    background-image: url(../images/roada.jpg);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+    width: 100vw;
+    height: 50vh;
+>>>>>>> master
   }
 
   #game-screen img:first-of-type {
@@ -224,6 +263,7 @@ body {
     height: 50vh;
   }
  
+<<<<<<< HEAD
   .player {
     position: absolute;
     top: 25vh;
@@ -233,6 +273,15 @@ body {
     z-index: 1;
     transform: translateX(0%);
     transition: transform 0.2s ease-out;
+=======
+  #player {
+    position: absolute;
+    top: 240px;
+    left: 445px;
+    width: 288px;
+    height: 270px;
+    z-index: 1;
+>>>>>>> master
   }
 
 /* next-levels or game over - screen IV */

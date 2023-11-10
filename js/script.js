@@ -1,7 +1,11 @@
 window.onload = function () {
     const startBtn = document.getElementById('start');
     const startGameBtn = document.getElementById('start-game');
+<<<<<<< HEAD
     // const nextLevelBtn = document.getElementById('next-level');
+=======
+    const nextLevelBtn = document.getElementById('next-level');
+>>>>>>> master
     const restartBtn = document.getElementById('restart-btn');
     
 
@@ -11,19 +15,31 @@ window.onload = function () {
     const instruction = document.getElementById('instructions');
     const gameContainer = document.getElementById('game-container');
 
+<<<<<<< HEAD
     let game;
 
     // start btn - to instruction btn
     startBtn.addEventListener('click', function() {
         console.log('click');
+=======
+    // start btn - to instruction btn
+    startBtn.addEventListener('click', function() {
+        console.log('click')
+>>>>>>> master
         openingScreen.style.display = "none";
         instruction.style.display = "flex";
     } )
 
     // instruction btn - to the game container
     startGameBtn.addEventListener('click', function(){
+<<<<<<< HEAD
         game = new Game();
         game.start();
+=======
+        console.log('click2')
+        instruction.style.display  = "none";
+        gameContainer.style.display = "block";
+>>>>>>> master
     })
 
     //restart btn-refresh page 
@@ -35,6 +51,7 @@ window.onload = function () {
         location.reload();
     }
 
+<<<<<<< HEAD
     // Function to handle the jump
     function jump(player) {
         console.log("entered jump", player);
@@ -91,6 +108,8 @@ window.onload = function () {
 
     // Add the handleKeydown function as an event listener for the keydown event
     window.addEventListener("keydown", handleKeydown);
+=======
+>>>>>>> master
 
 };
 
