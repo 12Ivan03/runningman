@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     font-size: 16px;
     font-family:'Courier New', Courier, monospace;
 }
@@ -10,29 +8,38 @@ body {
 
 #opening-screen {
 /* To display chagne display to flex */
-    display: none;
+    display: flex;
 
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 5rem;
-    background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
+    background-image: url(../images/athletics-track.jpeg);
     background-position: bottom;
     background-size: cover;
-    height: 30rem;
+    width: 100vw;
+    height: 100vh;
 }
 
 #opening-screen button {
     border-radius: 2rem;
     font-weight: 600;
     font-size: x-large;
-    margin-bottom: 7.5rem;
+    margin-bottom: 10rem;
+}
+
+#start{
+    border: 0px
+}
+
+#start:hover {  
+    opacity: 0.5;
 }
 
 #opening-screen p {
     text-align: center;
     font-size: xx-large;
     font-weight: 600;
+    margin-bottom: 3rem;
 }
 
 /* Instruction Intro screen - II */
@@ -46,26 +53,39 @@ body {
     justify-content: center;
     flex-wrap: nowrap;
     height: 30rem;
-    background-image: url(../Image/depositphotos_5295820-Sports-athletics-track.jpeg);
+    background-image: url(../images/athletics-track.jpeg);
     background-size: cover;
     background-position: center;
-    
+    width: 100vw;
+    height: 100vh;    
+    font-weight: 600;
 }
 
 #instructions h1 {
     text-align: center;
     font-size: 3rem;
+    margin: 10rem 0 2rem 0;
 }
 
 #instructions p {
     font-size: 1.4rem;
-    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+
+#start-game{
+    border: 0px
+}
+
+#start-game:hover {  
+    opacity: 0.5;
 }
 
 .instruction-info-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 0 1rem;
+    margin: 0 2em;
+    height: 60vh;
 }
 
 .instruction-info-buttons p {
@@ -79,19 +99,43 @@ body {
     align-items: center;
 }
 
+
+.button-instruction div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* instruction btn arrow */
 .button-instruction div:first-of-type img {
     height: 3rem;
     margin-bottom: 1rem;
 } 
 
+.button-instruction div:first-of-type p {
+    width: 20vw;
+}
+
+/* instruction btn space */
+.button-instruction div:nth-child(3) img{
+    height: 1.5rem;
+}
+
+.button-instruction div:nth-child(3) p {
+    width: 20vw;
+}
+
+/* instruction btn C */
 .button-instruction div:last-of-type img {
     height: 2rem;
+}
+.button-instruction div:last-of-type p {
+    width: 20vw;
 }
 
 .instruction, button {
     width: 17rem;
     height: 3rem;
-    margin-top: 1rem;
+    margin-bottom: 6rem;
     font-weight: 700;
     font-size: larger;
     border-radius: 2rem;
@@ -103,20 +147,68 @@ body {
 
 #game-container {
     display: none;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-weight: 600;
 }
+
+#skyline {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-image: url(../images/beautiful-landscape-view-ocean.jpg);
+    background-size: cover;
+    background-position: bottom;
+    height: 50vh;
+    width: 100vw;
+}
+
+.live-stats {
+    padding: 20px;
+}
+
+#game-screen {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    background-image: url(../images/roada.jpg);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+    width: 100vw;
+    height: 50vh;
+  }
+
+  #game-screen img:first-of-type {
+    width: 100vw;
+    height: 50vh;
+  }
+ 
+  #player {
+    position: absolute;
+    top: 240px;
+    left: 445px;
+    width: 288px;
+    height: 270px;
+    z-index: 1;
+  }
 
 /* next-levels or game over - screen IV */
 
 #level-or-game-end {
 /* To display chagne display to flex */
-    display: flex;
+    display: none;
     
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(../Image/end-screen.jpeg);
+    background-image: url(../images/end-screen.jpeg);
     background-size: cover;
     background-position: top;
+    width: 100vw;
+    height: 100vh;
 }
 
 #level-or-game-end div:first-of-type {
@@ -125,7 +217,11 @@ body {
     align-items: center;
     margin-bottom: 3rem;
     font-weight: 600;
-    font-size: x-large;
+    font-size: xx-large;
+}
+
+#level-or-game-end div:first-of-type div:first-of-type p{
+    margin: 1rem 0 2rem 0;
 }
 
 #level-or-game-end div:first-of-type button {
@@ -134,4 +230,22 @@ body {
 
 #level-or-game-end div:last-of-type {
     margin-bottom: 3rem;
+}
+
+/* buttons */
+
+#level-or-game-end div:first-of-type button {
+    border: 0px;
+}
+
+#level-or-game-end div:last-of-type button {
+    border: 0px;
+}
+
+#level-or-game-end div:first-of-type button:hover {
+    opacity: 0.5;
+}
+
+#level-or-game-end div:last-of-type button:hover {
+    opacity: 0.5;
 }
