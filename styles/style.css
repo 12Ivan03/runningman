@@ -32,7 +32,12 @@ body {
 }
 
 #start:hover {  
-    opacity: 0.5;
+    opacity: 0.9;
+    background-color: rgb(158, 255, 13);
+    color: rgb(94, 12, 12);
+    font-weight: 800;
+    cursor: pointer;
+    border: solid 3px #fff;
 }
 
 #opening-screen p {
@@ -78,7 +83,12 @@ body {
 }
 
 #start-game:hover {  
-    opacity: 0.5;
+    opacity: 0.9;
+    cursor: pointer;
+    background-color: rgb(158, 255, 13);
+    color: rgb(94, 12, 12);
+    border: solid 5px #fff;
+    font-weight: 800;
 }
 
 .instruction-info-buttons {
@@ -148,10 +158,7 @@ body {
 #game-container {
     display: none;
     flex-direction: column;
-    width: 100vw;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
     font-weight: 600;
 }
 
@@ -172,13 +179,44 @@ body {
 
 #game-screen {
     display: block;
-    overflow: hidden;
-    position: absolute;
-    background-image: url(../images/roada.jpg);
+    /* background-image: url(../images/road.jpg); */
     background-size: cover;
-    animation: slide 5s linear infinite;
     width: 100vw;
     height: 50vh;
+    position: absolute;
+    top:50vh;
+    z-index: -1;
+}
+
+#road-strip {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url(../images/road-strip.png);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+    width: 2vw;
+    height: 72vh;
+    animation: slide 3s linear infinite;
+    z-index: 1;
+    position: fixed;
+    overflow: hidden;
+    top: 27vh;
+    left: 47vw;
+  }
+
+  
+
+  @keyframes slide {
+    0% {
+      background-position: 0 -1000px;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 50px;
+    }
   }
 
   #game-screen img:first-of-type {
@@ -186,13 +224,15 @@ body {
     height: 50vh;
   }
  
-  #player {
+  .player {
     position: absolute;
-    top: 240px;
-    left: 445px;
-    width: 288px;
-    height: 270px;
+    top: 25vh;
+    left: 36vw;
+    width: 15vw;
+    height: 18vh;
     z-index: 1;
+    transform: translateX(0%);
+    transition: transform 0.2s ease-out;
   }
 
 /* next-levels or game over - screen IV */
