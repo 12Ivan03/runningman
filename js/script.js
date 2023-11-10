@@ -11,18 +11,19 @@ window.onload = function () {
     const instruction = document.getElementById('instructions');
     const gameContainer = document.getElementById('game-container');
 
+    let game;
+
     // start btn - to instruction btn
     startBtn.addEventListener('click', function() {
-        console.log('click')
+        console.log('click');
         openingScreen.style.display = "none";
         instruction.style.display = "flex";
     } )
 
     // instruction btn - to the game container
     startGameBtn.addEventListener('click', function(){
-        console.log('click2')
-        instruction.style.display  = "none";
-        gameContainer.style.display = "block";
+        game = new Game();
+        game.start();
     })
 
     //restart btn-refresh page 
