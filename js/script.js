@@ -35,6 +35,62 @@ window.onload = function () {
         location.reload();
     }
 
+    // Function to handle the jump
+    function jump(player) {
+        console.log("entered jump", player);
+        player.element.style.transform = 'translateY(-100px)';
+        setTimeout(() => {
+            player.element.style.transform = 'translateY(-100px)';
+            player.element.style.transform = 'translateY(0)';
+        }, 300);
+    }
+
+      
+    function handleKeydown(event) {
+        const code = event.code;
+        console.log("event", event);
+        console.log("code", code)
+        const possibleKeystrokes = [
+          "ArrowLeft",
+          "ArrowUp",
+          "ArrowRight",
+          "ArrowDown",
+          "c",
+          "Space" //space
+        ];
+    
+        // Check if the pressed key is in the possibleKeystrokes array
+        if (possibleKeystrokes.includes(code)) {
+          event.preventDefault();
+          console.log("entered line 64 code", code);
+          // Update player's directionX and directionY based on the key pressed
+          switch (code) {
+            case "ArrowLeft":
+              console.log("code", code);
+              game.player.directionX = -1;
+              break;
+            case "ArrowUp":
+              console.log("code", code);
+              game.player.directionY = -1;
+              break;
+            case "ArrowRight":
+              console.log("code", code);
+              game.player.directionX = 1;
+              break;
+            case "ArrowDown":
+              console.log("code", code);
+              game.player.directionY = 1;
+              break;
+            case "Space":
+                console.log("code", code);
+              jump(game.player);
+               break;
+          }
+        }
+      }
+
+    // Add the handleKeydown function as an event listener for the keydown event
+    window.addEventListener("keydown", handleKeydown);
 
 };
 

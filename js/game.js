@@ -50,7 +50,7 @@ class Game {
     }
 
     update(){
-        
+        this.player.move();        
 
     }
 }
