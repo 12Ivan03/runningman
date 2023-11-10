@@ -1,8 +1,8 @@
 class Player {
 
     constructor(gameScreen, imgSrc){
-        this.top = "25vh";
-        this.left = "36vw";
+        this.top = 25;
+        this.left = 36;
         this.gameScreen = gameScreen;
         
         //player image

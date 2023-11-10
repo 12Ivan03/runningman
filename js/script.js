@@ -38,9 +38,9 @@ window.onload = function () {
     // Function to handle the jump
     function jump(player) {
         console.log("entered jump", player);
-        player.element.style.transform = 'translateY(-100px)';
+        player.element.style.transform = 'translateY(-225px)';
         setTimeout(() => {
-            player.element.style.transform = 'translateY(-100px)';
+            player.element.style.transform = 'translateY(-225px)';
             player.element.style.transform = 'translateY(0)';
         }, 300);
     }

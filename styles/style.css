@@ -188,7 +188,7 @@ body {
     z-index: -1;
 }
 
-#road-strip{
+#road-strip {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -231,8 +231,8 @@ body {
     width: 15vw;
     height: 18vh;
     z-index: 1;
-    /* transform: translateX(0%);
-    transition: transform 0.3s ease-out; */
+    transform: translateX(0%);
+    transition: transform 0.2s ease-out;
   }
 
 /* next-levels or game over - screen IV */
