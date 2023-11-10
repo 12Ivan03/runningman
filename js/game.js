@@ -10,12 +10,12 @@ class Game {
     constructor(){
         this.instructionScreen = document.getElementById('instructions');
         
-        // Game Scren
         this.gameContainer = document.getElementById('game-container');
+        this.gameScreen = document.getElementById('game-screen');
         this.width = '100vw';
         this.height = '100vh';
         //Player 
-        this.player = null // we initialize it later
+        this.player = new Player(this.gameScreen,"../images/therunningman.png");
 
         //obstacle container
         this.obstacles = [];
@@ -35,13 +35,22 @@ class Game {
         this.gameContainer.style.height = `${this.height}px`;
         this.instructionScreen.style.display = 'none';
         this.gameContainer.style.display = 'flex';
-
-        //Invoke game Loop
-        window.requestAnimationFrame(()=>  this.gameLoop());
+        this.gameLoop();
+        
     }
 
     gameLoop(){
+        if(this.isGameOver){
+            return;
+        }
+        console.log('game loop');
+        this.update()
+        //Invoke game Loop
+        window.requestAnimationFrame(()=> this.gameLoop());
+    }
 
+    update(){
         
+
     }
 }

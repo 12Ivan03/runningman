@@ -32,10 +32,12 @@ body {
 }
 
 #start:hover {  
-    opacity: 0.8;
+    opacity: 0.9;
     background-color: rgb(158, 255, 13);
     color: rgb(94, 12, 12);
     font-weight: 800;
+    cursor: pointer;
+    border: solid 3px #fff;
 }
 
 #opening-screen p {
@@ -81,7 +83,12 @@ body {
 }
 
 #start-game:hover {  
-    opacity: 0.5;
+    opacity: 0.9;
+    cursor: pointer;
+    background-color: rgb(158, 255, 13);
+    color: rgb(94, 12, 12);
+    border: solid 5px #fff;
+    font-weight: 800;
 }
 
 .instruction-info-buttons {
@@ -217,12 +224,12 @@ body {
     height: 50vh;
   }
  
-  #player {
+  .player {
     position: absolute;
-    top: 240px;
-    left: 445px;
-    width: 288px;
-    height: 270px;
+    top: 25vh;
+    left: 36vw;
+    width: 15vw;
+    height: 18vh;
     z-index: 1;
   }
 
