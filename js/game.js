@@ -18,12 +18,15 @@ class Game {
         this.player = new Player(this.gameScreen,"../images/therunningman.png");
 
         //obstacle container
+        this.obsImages = [];
         this.obstacles = [];
 
         //Game properties
         this.distance = 20; // Level1-20kms
         this.speed = 1/3; 
-
+        //player property 
+        this.health = 100;
+        this.money = 25;
 
         this.isGameOver = false;
         
@@ -42,7 +45,7 @@ class Game {
         if(this.isGameOver){
             return;
         }
-        console.log('game loop');
+        // console.log('game loop');
         this.update()
         //Invoke game Loop
         window.requestAnimationFrame(()=> this.gameLoop());
@@ -59,7 +62,7 @@ class Game {
             // const scoreObs = this.obstacle[i].score.money
 
             obstacle.move();
-      
+            // console.log("obstacle", obstacle);
             if (this.player.didCollide(obstacle)) {
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
@@ -88,10 +91,41 @@ class Game {
 
           // from this array Math.random to choose which to initilize. 
       
-          if (Math.random() > 0.98 && this.obstacles.length < 1) {
-            this.obstacles.push(new Obstacle(this.gameScreen));
+          if (Math.random() > 0.98 && this.obstacles.length < 1) {   // at any given point in time , obstacles array is containing only 1 object
+            // this.obstacles.push(new Obstacle(this.gameScreen));
+            // let goodObstacle = new GoodObstacle(this.gameScreen, "../images/avocado.png");
+          //  console.log("goodObstacle", new GoodObstacle(this.gameScreen, "../images/avocado.png"));
+          let randomPosition = Math.floor(Math.random()*4);
+          console.log("random", randomPosition);
+            this.obstacles.push(new GoodObstacle(this.gameScreen, "../images/avocado.png", randomPosition));
           }
+
+          
     }
 
+    getObsImages(){
+      return ["../images/avocado.png",
+              "../images/orange.png",
+              "../images/apple.png"
+             ]
+    }
+
+    didCollide(obstacle) {
+      const playerBoundaries = this.player.element.getBoundingClientRect();
+      const obstacleBoundaries = obstacle.element.getBoundingClientRect();
+
+      if (
+          playerBoundaries.left < obstacleBoundaries.right &&
+          playerBoundaries.right > obstacleBoundaries.left &&
+          playerBoundaries.top < obstacleBoundaries.bottom &&
+          playerBoundaries.bottom > obstacleBoundaries.top
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+
+      
+  }
     
 }

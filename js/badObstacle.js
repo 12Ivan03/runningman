@@ -1,0 +1,3 @@
+class BadObstacle extends Obstacle {
+    
+}

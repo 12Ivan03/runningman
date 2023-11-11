@@ -18,9 +18,7 @@ class Player {
         this.directionX = 0;
         this.directionY = 0;
 
-        //player property 
-        this.health = 100;
-        this.money = 25;
+      
 
     }
 
