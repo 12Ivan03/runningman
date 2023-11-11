@@ -95,7 +95,7 @@ class Game {
             // this.obstacles.push(new Obstacle(this.gameScreen));
             // let goodObstacle = new GoodObstacle(this.gameScreen, "../images/avocado.png");
           //  console.log("goodObstacle", new GoodObstacle(this.gameScreen, "../images/avocado.png"));
-          let randomPosition = Math.floor(Math.random()*4);
+          let randomPosition = Math.floor(Math.random()*5);
           console.log("random", randomPosition);
             this.obstacles.push(new GoodObstacle(this.gameScreen, "../images/avocado.png", randomPosition));
           }
