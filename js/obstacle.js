@@ -8,20 +8,15 @@ class Obstacle {
         this.startPosition = startPosition;
         
         if(startPosition === 0){
-            console.log('startPosition')
             this.left = 38;
         } else if(startPosition === 1){
-            console.log('startPosition')
             this.left = 42;
         } else if(startPosition === 2){
-            console.log('startPosition')
             this.left = 47.5;
         } else if(startPosition === 3){
-            console.log('startPosition')
             this.left = 53;
         } else {
             this.left = 58;
-            console.log('startPosition')
         }
 
 
@@ -54,27 +49,21 @@ class Obstacle {
     move(){
 
         if(this.startPosition === 0) {
-            console.log('change1')
             this.left -= 0.09
-        } else if(this.startPosition === 1) {
-            console.log('change12')
+        } else if(this.startPosition === 1){
             this.left -= 0.04
         } else if(this.startPosition === 2) {
-            console.log('change13')
             this.left -= 0.002
         } else if(this.startPosition === 3) {
-            console.log('change14')
             this.left += 0.04
         } else {
-            console.log('change15')
             this.left += 0.09
         }
-        //this.left -= 0.09; //for left/right
 
-        this.top += 0.1;
+        this.top += 0.2;
         
-        this.width += 0.1;
-        this.height += 0.1;
+        this.width += 0.15;
+        this.height += 0.15;
         this.updatePosition();
     }
 

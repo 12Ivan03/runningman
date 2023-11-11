@@ -65,10 +65,11 @@ class Game {
             if (this.player.didCollide(obstacle)) {
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
-            
+              this.health -= 5
+              document.getElementById('health').textContent -= this.health;
               //this.health--;
               //document.getElementById('health').textContent -= this.health;
-              i--;
+              //i--;
             }
             else if (obstacle.top > 42) {
               obstacle.element.remove();
@@ -78,15 +79,9 @@ class Game {
             }
           }
       
-        if (this.health === 0) {
-            this.endGame();
-        }
-
-          // new loop / decide which of the 3 Good obscatles should be initialized. No3 
-          // new loop / decide which of the 3 Bad obscatles should be initialized. No10
-          // new loop / decide which of the 3 Money obscatles should be initialized. No5
-
-          //store in array... push 18 
+        // if (this.health === 0) {
+        //     this.endGame();
+        // }
 
           // from this array Math.random to choose which to initilize. 
         const goodObstacleImg = ["../images/avocado.png",
@@ -104,8 +99,6 @@ class Game {
                     "../images/coin15.png"
                    ]
 
-
-    
         //good Random obsticals
         const randomGoodImg = Math.floor(Math.random() * goodObstacleImg.length);
 

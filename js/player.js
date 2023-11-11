@@ -12,6 +12,8 @@ class Player {
         this.element.style.top = `${this.top}vh`;
         this.element.style.left = `${this.left}vw`;
         this.element.className = "player";
+        this.element.style.width = "4rem"
+        this.element.style.height = "8rem"
         this.gameScreen.appendChild(this.element);
 
         //player movement

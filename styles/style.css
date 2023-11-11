@@ -20,15 +20,15 @@ body {
     height: 100vh;
 }
 
-#opening-screen button {
+#start{
     border-radius: 2rem;
-    font-weight: 600;
+    font-weight: 100;
     font-size: x-large;
     margin-bottom: 10rem;
-}
-
-#start{
-    border: 0px
+    border: 0px;
+    font-weight: 600;
+    height: 3rem;
+    width: 17rem;
 }
 
 #start:hover {  
@@ -37,7 +37,7 @@ body {
     color: rgb(94, 12, 12);
     font-weight: 800;
     cursor: pointer;
-    border: solid 3px #fff;
+    border: solid 3px rgb(158, 255, 13);
 }
 
 #opening-screen p {
@@ -87,7 +87,7 @@ body {
     cursor: pointer;
     background-color: rgb(158, 255, 13);
     color: rgb(94, 12, 12);
-    border: solid 5px #fff;
+    border: solid 3px rgb(158, 255, 13);
     font-weight: 800;
 }
 
@@ -142,10 +142,10 @@ body {
     width: 20vw;
 }
 
-.instruction, button {
+#start-game {
     width: 17rem;
-    height: 3rem;
-    margin-bottom: 6rem;
+    height: 5rem;
+    margin-bottom: 8rem;
     font-weight: 700;
     font-size: larger;
     border-radius: 2rem;
@@ -194,10 +194,9 @@ body {
     justify-content: center;
     background-image: url(../images/road-strip.png);
     background-size: cover;
-    animation: slide 5s linear infinite;
-    width: 2vw;
-    height: 72vh;
-    animation: slide 3s linear infinite;
+    animation: slide 7s linear infinite;
+    width: 1vw;
+    height: 74vh;
     z-index: 1;
     position: fixed;
     overflow: hidden;
