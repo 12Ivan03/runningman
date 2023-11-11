@@ -50,7 +50,36 @@ class Game {
     }
 
     update(){
-        this.player.move();        
-
+        this.player.move();   
+        
+        // for (let i = 0; i < this.obstacles.length; i++) {
+        //     const obstacle = this.obstacles[i];
+        //     obstacle.move();
+      
+        //     if (this.player.didCollide(obstacle)) {
+        //       obstacle.element.remove();
+        //       this.obstacles.splice(i, 1);
+        //       this.lives--;
+        //       document.getElementById('lives').textContent = this.lives;
+        //       i--;
+        //     }
+        //     else if (obstacle.top > this.height) {
+        //       this.score++;
+        //       obstacle.element.remove();
+        //       this.obstacles.splice(i, 1);
+        //       document.getElementById('score').textContent = this.score;
+        //       i--;
+        //     }
+        //   }
+      
+          if (this.health === 0) {
+            this.endGame();
+          }
+      
+          if (Math.random() > 0.98 && this.obstacles.length < 1) {
+            this.obstacles.push(new Obstacle(this.gameScreen));
+          }
     }
+
+    
 }
