@@ -2,17 +2,16 @@
 class Obstacle {
     constructor(gameScreen){
         this.gameScreen = gameScreen
-        this.top = -1;
-        this.left = 45;
-        this.width = 3; 
-        this.height = 3;
+        this.top = 0;
+        this.left = 45; // random on the rode.. // update the left
+        this.width = 5; 
+        this.height = 5;
         this.element = document.createElement('img');
 
-        //element's dimentiones 
         this.element.src = "../images/avocado.png";
         this.element.style.position = "absolute";
-        this.element.style.width = `${this.width}vw`;
-        this.element.style.height = `${this.height}vh`;
+        this.element.style.width = `${this.width}px`;
+        this.element.style.height = `${this.height}px`;
         this.element.style.left = `${this.left}vw`;
         this.element.style.top = `${this.top}vh`;
         this.element.style.zIndex = "5"
@@ -27,11 +26,18 @@ class Obstacle {
     updatePosition(){
         this.element.style.left = `${this.left}vw`;
         this.element.style.top = `${this.top}vh`;
+        this.element.style.width = `${this.width}px`;
+        this.element.style.height =`${this.height}px`;
     }
 
 
+    //score(){
+//
+   // }
     move(){
-        this.top += 1;
+        this.top += 0.1;
+        this.width += 0.1;
+        this.height += 0.1;
         this.updatePosition();
     }
 

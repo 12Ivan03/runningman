@@ -17,6 +17,11 @@ class Player {
         //player movement
         this.directionX = 0;
         this.directionY = 0;
+
+        //player property 
+        this.health = 100;
+        this.money = 25;
+
     }
 
     move(){
@@ -32,6 +37,24 @@ class Player {
         // console.log('player position', this.element.getBoundingClientRect())
         this.directionX = 0;
         this.directionY = 0;
+    }
+
+    didCollide(obstacle) {
+        const playerBoundaries = this.element.getBoundingClientRect();
+        const obstacleBoundaries = obstacle.element.getBoundingClientRect();
+
+        if (
+            playerBoundaries.left < obstacleBoundaries.right &&
+            playerBoundaries.right > obstacleBoundaries.left &&
+            playerBoundaries.top < obstacleBoundaries.bottom &&
+            playerBoundaries.bottom > obstacleBoundaries.top
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+
+        
     }
 
 }
