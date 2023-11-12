@@ -13,7 +13,6 @@ class Obstacle {
         this.width = 10; 
         this.height = 10;
         this.element = document.createElement('img');
-
         this.element.src = obstacle.image;
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;

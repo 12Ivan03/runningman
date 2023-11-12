@@ -17,11 +17,12 @@ class Money extends Obstacle {
         }
         ]
 
-        super(gameScreen,  moneyObstacleImg[Math.floor(Math.random() * moneyObstacleImg.length)] , startPosition);
+        const randomMoney = moneyObstacleImg[Math.floor(Math.random() * moneyObstacleImg.length)];
+        super(gameScreen,  randomMoney , startPosition);
+        this.randomCoins = randomMoney.cost;
     }
     
-    updateStatistics(game){
-        console.log("okokokokokokokok")
-        console.log("game", game);
+    updateStatistics(player){
+       player.money += this.randomCoins;
     }
 }

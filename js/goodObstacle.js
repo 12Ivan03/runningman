@@ -19,12 +19,15 @@ class GoodObstacle extends Obstacle {
                 boost: 15
             }
         ]
-    
-        super(gameScreen,goodObstacleImg[ Math.floor(Math.random() * goodObstacleImg.length)], startPosition);
+        const randomGoodObstacle = goodObstacleImg[ Math.floor(Math.random() * goodObstacleImg.length)];
+        super(gameScreen,randomGoodObstacle, startPosition);
+        this.randomCost = randomGoodObstacle.cost;
+        this.randomBoost = randomGoodObstacle.boost;
     }
 
-    updateStatistics(game){
-        console.log("okokokokokokokok")
-        console.log("game", game);
+    updateStatistics(player){
+        console.log("updating good stats")
+        player.money -= this.randomCost;
+        player.health += this.randomBoost;
     }
 }

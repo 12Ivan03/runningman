@@ -23,11 +23,6 @@ class Game {
 
         this.isGameOver = false;
           //Game properties
-          this.distance = 20; // Level1-20kms
-          this.speed = 1/3; 
-          //player property 
-          this.health = 100;
-          this.money = 25;
         
     }
 
@@ -95,25 +90,27 @@ class Game {
         // if (this.health === 0) {
         //     this.endGame();
         // }
-               
+        
+        document.getElementById('health').textContent = this.player.health;
+        document.getElementById('money').textContent = this.player.money;
         this.addObstacle();
     }
 
   addObstacle() {
     const random = Math.random();
-    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 2) {
+    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 1) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random2", randomStartPosition);
       this.obstacles.push(new GoodObstacle(this.gameScreen, randomStartPosition));
     }
 
-    if (random > 0 && random < 0.20 && this.obstacles.length < 2) {
+    if (random > 0 && random < 0.20 && this.obstacles.length < 1) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random", randomStartPosition);
       this.obstacles.push(new BadObstacle(this.gameScreen, randomStartPosition));
     }
 
-    if (random > 0.98 && this.obstacles.length < 2) {
+    if (random > 0.98 && this.obstacles.length < 1) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random", randomStartPosition);
       this.obstacles.push(new Money(this.gameScreen, randomStartPosition));

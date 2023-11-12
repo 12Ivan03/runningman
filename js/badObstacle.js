@@ -20,12 +20,16 @@ class BadObstacle extends Obstacle {
             liability: 5
         }
         ]
-        const randomIndex = Math.floor(Math.random() * badObstacleImg.length);
-        super(gameScreen,badObstacleImg[randomIndex], startPosition);
+
+        const randomBadObstacle = badObstacleImg[ Math.floor(Math.random() * badObstacleImg.length)];
+        super(gameScreen,randomBadObstacle, startPosition);
+        this.randomCost = randomBadObstacle.cost;
+        this.randomLiability = randomBadObstacle.liability;
     }
     
-    updateStatistics(game){
-        
+    updateStatistics(player){
+        player.health -= this.randomLiability;
+        player.money -= this.randomCost;
     }
    
 }
