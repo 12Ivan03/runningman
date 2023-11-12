@@ -1,9 +1,9 @@
 class Player {
 
     constructor(gameScreen, imgSrc){
-        this.top = 25;
-        this.left = 36;
-        this.gameScreen = gameScreen;
+        this.top = 30;
+        this.left = 38;
+        this.gameScreen = document.getElementById('game-screen');
         
         //player image
         this.element = document.createElement('img');
@@ -25,10 +25,29 @@ class Player {
     }
 
     move(){
-        this.left += this.directionX;
-        this.top += this.directionY;
+      this.left += this.directionX;
+      this.top += this.directionY;
+      
+     
+      if (this.left < 3) {
+        this.left = 3;
+      }
+    
+      if (this.top < 10) {
+        this.top = 10;
+      }
+     
+      if (this.left > 90) {
+        this.left = 90;
+      }
+    
+      if (this.top > 32) {
+        this.top = 32;
+      }
+      
 
-        this.updatePosition();
+
+      this.updatePosition();
     }
 
     updatePosition(){
@@ -39,15 +58,15 @@ class Player {
         this.directionY = 0;
     }
 
-    didCollide(obstacle) {
+    didCollide(BadObstacle) {
         const playerBoundaries = this.element.getBoundingClientRect();
-        const obstacleBoundaries = obstacle.element.getBoundingClientRect();
+        const badobstacleBoundaries = BadObstacle.element.getBoundingClientRect();
 
         if (
-            playerBoundaries.left < obstacleBoundaries.right &&
-            playerBoundaries.right > obstacleBoundaries.left &&
-            playerBoundaries.top < obstacleBoundaries.bottom &&
-            playerBoundaries.bottom > obstacleBoundaries.top
+            playerBoundaries.left < badobstacleBoundaries.right &&
+            playerBoundaries.right > badobstacleBoundaries.left &&
+            playerBoundaries.top < badobstacleBoundaries.bottom &&
+            playerBoundaries.bottom > badobstacleBoundaries.top
           ) {
             return true;
           } else {
