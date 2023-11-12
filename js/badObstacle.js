@@ -3,7 +3,7 @@ class BadObstacle extends Obstacle {
    
 
     constructor(gameScreen, startPosition){
-        let  badObstacleImg = ["../images/burger.png",
+        const  badObstacleImg = ["../images/burger.png",
         "../images/donut.png",
         "../images/fries.png"
        ]

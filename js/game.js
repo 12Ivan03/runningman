@@ -83,10 +83,7 @@ class Game {
         //     this.endGame();
         // }
                
-        if (Math.random() > 0.98 && this.obstacles.length < 5) {   // at any given point in time , obstacles array is containing only 1 object
-            // this.obstacles.push(new Obstacle(this.gameScreen));
-            // let goodObstacle = new GoodObstacle(this.gameScreen, "../images/avocado.png");
-          //  console.log("goodObstacle", new GoodObstacle(this.gameScreen, "../images/avocado.png"));
+        if (Math.random() > 0.98 && this.obstacles.length < 5) { 
             let randomStartPosition = Math.floor(Math.random()*5);
             console.log("random2", randomStartPosition);
             this.obstacles.push(new GoodObstacle(this.gameScreen, randomStartPosition));
