@@ -33,8 +33,16 @@ class Player {
         this.left = 3;
       }
     
-      if (this.top < 10) {
-        this.top = 10;
+      if (this.top < 17) {
+        this.top = 17;
+      } 
+      
+      if (this.top < 26 && this.left < 7 )  {
+        this.left = 7
+      }
+
+      if (this.top < 26 && this.left > 85 )  {
+        this.left = 85
       }
      
       if (this.left > 90) {

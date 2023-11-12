@@ -65,10 +65,8 @@ class Game {
             if (this.player.didCollide(obstacle)) {
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
-              this.health --
-              document.getElementById('health').textContent -= this.health;
-              //this.health--;
-              //document.getElementById('health').textContent -= this.health;
+              document.getElementById('health').textContent = this.health - 1;
+              this.health--;
               i--;
             }
             else if (obstacle.top > 41) {
