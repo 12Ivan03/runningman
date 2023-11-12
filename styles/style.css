@@ -172,7 +172,7 @@ body {
     height: 50vh;
     width: 100vw;
     background-color: rgb(71, 186, 201); 
-    animation: cloud 10s linear infinite ;
+    animation: cloud 300s linear infinite ;
 } 
 
 /* display: flex;
@@ -196,10 +196,10 @@ body {
     }
   }
 
-
-
 .live-stats {
     padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .live-stats p { 

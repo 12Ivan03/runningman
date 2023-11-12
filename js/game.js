@@ -3,7 +3,6 @@
  * - game loop -> will refresh the game with current status of the player.
  * - will contain the logic to win lose or go to next level situation.
  * 
- * 
  */
 class Game {
 
@@ -117,7 +116,7 @@ class Game {
   }
 
     didCollide(obstacle) {
-        const playerBoundaries = this.element.getBoundingClientRect();
+        const playerBoundaries = this.player.element.getBoundingClientRect();
         const obstacleBoundaries = obstacle.element.getBoundingClientRect();
 
         if (

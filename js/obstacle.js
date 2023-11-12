@@ -44,15 +44,15 @@ class Obstacle {
 
     move(){
          if(this.startPosition === 0) {
-             this.left -= 0.09
+             this.left -= 0.15
          } else if(this.startPosition === 1){
-             this.left -= 0.04
+             this.left -= 0.08
          } else if(this.startPosition === 2) {
              this.left -= 0.002
          } else if(this.startPosition === 3) {
-             this.left += 0.04
+             this.left += 0.08
          } else {
-             this.left += 0.09
+             this.left += 0.15
          }
  
          this.top += 0.2;
