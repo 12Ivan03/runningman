@@ -1,6 +1,6 @@
 
 class Obstacle {
-    constructor(gameScreen, imgSrc, startPosition){
+    constructor(gameScreen, obstacle, startPosition){
         this.gameScreen = gameScreen
         this.top = 0;
 
@@ -14,7 +14,7 @@ class Obstacle {
         this.height = 10;
         this.element = document.createElement('img');
 
-        this.element.src = imgSrc;
+        this.element.src = obstacle.image;
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;
@@ -43,34 +43,35 @@ class Obstacle {
         }
     }
 
-    updatePosition(){
-        this.element.style.left = `${this.left}vw`;
-        this.element.style.top = `${this.top}vh`;
-        this.element.style.width = `${this.width}px`;
-        this.element.style.height =`${this.height}px`;
-    }
-
     move(){
+         if(this.startPosition === 0) {
+             this.left -= 0.09
+         } else if(this.startPosition === 1){
+             this.left -= 0.04
+         } else if(this.startPosition === 2) {
+             this.left -= 0.002
+         } else if(this.startPosition === 3) {
+             this.left += 0.04
+         } else {
+             this.left += 0.09
+         }
+ 
+         this.top += 0.2;
+         
+         this.width += 0.15;
+         this.height += 0.15;
+         this.updatePosition();
+     }
+ 
+     updatePosition(){
+         this.element.style.left = `${this.left}vw`;
+         this.element.style.top = `${this.top}vh`;
+         this.element.style.width = `${this.width}px`;
+         this.element.style.height =`${this.height}px`;
+     }
 
-        if(this.startPosition === 0) {
-            this.left -= 0.09
-        } else if(this.startPosition === 1){
-            this.left -= 0.04
-        } else if(this.startPosition === 2) {
-            this.left -= 0.002
-        } else if(this.startPosition === 3) {
-            this.left += 0.04
-        } else {
-            this.left += 0.09
-        }
-
-        this.top += 0.2;
-        
-        this.width += 0.15;
-        this.height += 0.15;
-        this.updatePosition();
-    }
-
-
+     updateStatistics(game){
+        console.log("ok")
+     }
 }
 

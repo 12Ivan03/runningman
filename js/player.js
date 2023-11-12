@@ -12,14 +12,20 @@ class Player {
         this.element.style.top = `${this.top}vh`;
         this.element.style.left = `${this.left}vw`;
         this.element.className = "player";
-        this.element.style.width = "4rem"
-        this.element.style.height = "8rem"
+        this.element.style.width = "4rem";
+        this.element.style.height = "8rem";
         this.gameScreen.appendChild(this.element);
 
         //player movement
         this.directionX = 0;
         this.directionY = 0;
 
+         //Game properties
+         this.distance = 20; // Level1-20kms
+         this.speed = 1/3; 
+         //player property 
+         this.health = 100;
+         this.money = 25;
       
 
     }
@@ -37,24 +43,6 @@ class Player {
         // console.log('player position', this.element.getBoundingClientRect())
         this.directionX = 0;
         this.directionY = 0;
-    }
-
-    didCollide(obstacle) {
-        const playerBoundaries = this.element.getBoundingClientRect();
-        const obstacleBoundaries = obstacle.element.getBoundingClientRect();
-
-        if (
-            playerBoundaries.left < obstacleBoundaries.right &&
-            playerBoundaries.right > obstacleBoundaries.left &&
-            playerBoundaries.top < obstacleBoundaries.bottom &&
-            playerBoundaries.bottom > obstacleBoundaries.top
-          ) {
-            return true;
-          } else {
-            return false;
-          }
-
-        
     }
 
 }
