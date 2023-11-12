@@ -21,6 +21,12 @@ class Player {
         this.directionX = 0;
         this.directionY = 0;
 
+         //Game properties
+         this.distance = 20; // Level1-20kms
+         this.speed = 1/3; 
+         //player property 
+         this.health = 100;
+         this.money = 25;
       
 
     }
@@ -65,24 +71,6 @@ class Player {
         // console.log('player position', this.element.getBoundingClientRect())
         this.directionX = 0;
         this.directionY = 0;
-    }
-
-    didCollide(BadObstacle) {
-        const playerBoundaries = this.element.getBoundingClientRect();
-        const badobstacleBoundaries = BadObstacle.element.getBoundingClientRect();
-
-        if (
-            playerBoundaries.left < badobstacleBoundaries.right &&
-            playerBoundaries.right > badobstacleBoundaries.left &&
-            playerBoundaries.top < badobstacleBoundaries.bottom &&
-            playerBoundaries.bottom > badobstacleBoundaries.top
-          ) {
-            return true;
-          } else {
-            return false;
-          }
-
-        
     }
 
 }

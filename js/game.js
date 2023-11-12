@@ -20,14 +20,9 @@ class Game {
         //obstacle container
         this.obstacles = [];
 
-        //Game properties
-        this.distance = 20; // Level1-20kms
-        this.speed = 1/3; 
-        //player property 
-        this.health = 100;
-        this.money = 25;
 
         this.isGameOver = false;
+          //Game properties
         
     }
 
@@ -55,79 +50,71 @@ class Game {
         this.player.move();   
         
         //create/remove obstacle
+        console.log("size of obstacles array", this.obstacles.length);
         for (let i = 0; i < this.obstacles.length; i++) {
             const obstacle = this.obstacles[i];
             // const scoreObs = this.obstacle[i].score.health
             // const scoreObs = this.obstacle[i].score.money
 
+           
+            if(obstacle instanceof BadObstacle){
+              console.log("instance of BadObstacle")
+            } else if (obstacle instanceof GoodObstacle){
+              console.log("instance of good obstacle")
+            } else if (obstacle instanceof Money){
+              console.log("instance of Money");
+            }
+
             obstacle.move();
             // console.log("obstacle", obstacle);
-            if (this.player.didCollide(obstacle)) {
+            if (this.didCollide(obstacle)) {
+              obstacle.updateStatistics(this.player); 
               obstacle.element.remove();
+              console.log("obstacle collided and removed");
               this.obstacles.splice(i, 1);
-              document.getElementById('health').textContent = this.health - 1;
-              this.health--;
+              this.health -= 5
+              document.getElementById('health').textContent -= this.health;
+              //this.health--;
+              //document.getElementById('health').textContent -= this.health;
               i--;
             }
             else if (obstacle.top > 41) {
               obstacle.element.remove();
+              console.log("obstacle did not collide and removed");
               this.obstacles.splice(i, 1);
               i--;
-            }
+                 }
           }
       
         // if (this.health === 0) {
         //     this.endGame();
         // }
-
-          // from this array Math.random to choose which to initilize. 
-        const goodObstacleImg = [
-                    "../images/avocado.png",
-                    "../images/orange.png",
-                    "../images/apple.png"
-                   ]
-
-        const badObstacleImg = [
-                    "../images/burger.png",
-                    "../images/donut.png",
-                    "../images/fries.png"
-                  ]
-
-        const moneyObstacleImg = [
-                    "../images/coin.png",
-                    "../images/coin3.png",
-                    "../images/coin15.png"
-                   ]
-
-        //good Random obsticals
-        const randomGoodImg = Math.floor(Math.random() * goodObstacleImg.length);
-
-               
-        if (Math.random() > 0.98 && this.obstacles.length < 5) {   // at any given point in time , obstacles array is containing only 1 object
-            // this.obstacles.push(new Obstacle(this.gameScreen));
-            // let goodObstacle = new GoodObstacle(this.gameScreen, "../images/avocado.png");
-          //  console.log("goodObstacle", new GoodObstacle(this.gameScreen, "../images/avocado.png"));
-            let randomPosition = Math.floor(Math.random()*5);
-            console.log("random2", randomPosition);
-            this.obstacles.push(new GoodObstacle(this.gameScreen, goodObstacleImg[randomGoodImg], randomPosition));
-        }
-
-        // bad random obsticals
-        if (Math.random() > 0.98 && this.obstacles.length < 5) { 
-            let randomPosition = Math.floor(Math.random()*5);
-            console.log("random", randomPosition);
-            this.obstacles.push(new BadObstacle(this.gameScreen, badObstacleImg[randomGoodImg], randomPosition));
-        }
-
-        //random coins 
-        if (Math.random() > 0.98 && this.obstacles.length < 4) { 
-            let randomPosition = Math.floor(Math.random()*5);
-            console.log("random", randomPosition);
-            this.obstacles.push(new Money(this.gameScreen, moneyObstacleImg[randomGoodImg], randomPosition));
-        }
-
-          
+        
+        document.getElementById('health').textContent = this.player.health;
+        document.getElementById('money').textContent = this.player.money;
+        this.addObstacle();
     }
+
+  addObstacle() {
+    const random = Math.random();
+    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 1) {
+      let randomStartPosition = Math.floor(Math.random() * 5);
+      console.log("random2", randomStartPosition);
+      this.obstacles.push(new GoodObstacle(this.gameScreen, randomStartPosition));
+    }
+
+    if (random > 0 && random < 0.20 && this.obstacles.length < 1) {
+      let randomStartPosition = Math.floor(Math.random() * 5);
+      console.log("random", randomStartPosition);
+      this.obstacles.push(new BadObstacle(this.gameScreen, randomStartPosition));
+    }
+
+    if (random > 0.98 && this.obstacles.length < 1) {
+      let randomStartPosition = Math.floor(Math.random() * 5);
+      console.log("random", randomStartPosition);
+      this.obstacles.push(new Money(this.gameScreen, randomStartPosition));
+    }
+  }
 
     didCollide(obstacle) {
         const playerBoundaries = this.element.getBoundingClientRect();
@@ -148,4 +135,20 @@ class Game {
     }
 
     
+
+  /**
+   * Case 1
+   * when player collides with money -> add game.money = game.money + obstacle.cost;
+   * 
+   * Case 2
+   * when player collides with Bad obstacle -> subtract game.money-obstacle.cost  , subtract game.heath - obstacle.liability
+   * 
+   * Case 3
+   * when player collides with Good obstacle --> add  game.money + obstacle.cost  , game.health + obstacle.boost
+   * 
+   * 
+   * Case 4
+   * 
+   * 
+   */
 }
