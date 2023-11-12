@@ -164,17 +164,47 @@ body {
 
 #skyline {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
-    background-image: url(../images/beautiful-landscape-view-ocean.jpg);
+    justify-content: space-between;
+    background-image: url(../images/cartoonCloud.png); 
     background-size: cover;
     background-position: bottom;
     height: 50vh;
     width: 100vw;
-}
+    background-color: rgb(71, 186, 201); 
+    animation: cloud 10s linear infinite ;
+} 
+
+/* display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-image: url(../images/cartoonCloud.png); 
+    background-size: cover;
+    background-position: bottom;
+    height: 50vh;
+    width: 100vw;
+    background-color: rgb(71, 186, 201); 
+    animation: cloud 10s linear infinite ;
+}  */
+
+@keyframes cloud {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -1000px;
+    }
+  }
+
+
 
 .live-stats {
     padding: 20px;
+}
+
+.live-stats p { 
+    margin-bottom: 2rem;
+    font-size: x-large;
 }
 
 #game-screen {

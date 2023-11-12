@@ -14,6 +14,7 @@ class Player {
         this.element.className = "player";
         this.element.style.width = "4rem"
         this.element.style.height = "8rem"
+        this.element.style.zIndex = "99"
         this.gameScreen.appendChild(this.element);
 
         //player movement
