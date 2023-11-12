@@ -69,8 +69,6 @@ class Obstacle {
          this.element.style.height =`${this.height}px`;
      }
 
-     updateStatistics(game){
-        console.log("ok")
-     }
+
 }
 
