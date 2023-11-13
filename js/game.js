@@ -73,8 +73,6 @@ class Game {
         if(this.player.health <= 0){
           this.player.health = 0;
           this.endGame();
-        } else if(this.player.health < 60 && this.player.money === 0){
-          this.endGame();
         }
 
         if(this.player.health > 100){
@@ -90,19 +88,19 @@ class Game {
 
   addObstacle() {
     const random = Math.random();
-    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 2) {
+    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 10) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random2", randomStartPosition);
       this.obstacles.push(new GoodObstacle(this.gameScreen, randomStartPosition));
     }
 
-    if (random > 0 && random < 0.20 && this.obstacles.length < 2) {
+    if (random > 0 && random < 0.20 && this.obstacles.length < 10) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random", randomStartPosition);
       this.obstacles.push(new BadObstacle(this.gameScreen, randomStartPosition));
     }
 
-    if (random > 0.98 && this.obstacles.length < 2) {
+    if (random > 0.98 && this.obstacles.length < 10) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random", randomStartPosition);
       this.obstacles.push(new Money(this.gameScreen, randomStartPosition));
