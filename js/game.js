@@ -27,12 +27,32 @@ class Game {
         
     }
 
+  
+
     start(){
         this.gameContainer.style.width = `${this.width}vw`;
         this.gameContainer.style.height = `${this.height}vh`;
         this.instructionScreen.style.display = 'none';
         this.gameContainer.style.display = 'flex';
+
+        // Update the distance every second
+        const levelOneTime = 65;
+        const distanceInterval = setInterval(() => this.updateDistance(),1000);
+        const gameOver = false;
+        setTimeout(function(){
+          clearInterval(distanceInterval);
+          console.log("cancelling timer")
+        }, levelOneTime*1000);
+        this.player.speed = this.player.distance/levelOneTime;
+        document.getElementById('speed').textContent = this.player.speed.toFixed(2);
         this.gameLoop();
+    }
+
+    updateDistance(){
+      this.player.distance -= 1/3;
+      if(this.player.distance <= 0){
+        this.player.distance = 0;
+      }
     }
 
     gameLoop(){
@@ -40,30 +60,37 @@ class Game {
             return;
         }
         // console.log('game loop');
+        // this.player.distance -= 1/3;
         this.update()
         //Invoke game Loop
         window.requestAnimationFrame(()=> this.gameLoop());
     }
 
     update(){
+      document.getElementById('distance').textContent = `${this.player.distance.toFixed(2)}`;
+      console.log("distance", this.player.distance);
+      console.log("comparison", this.player.distance<=0)
+      if(this.player.distance <= 0){
+        console.log('entering zero')
+        this.isGameOver = true;
+        this.endGame();
+        return;
+      }
         //moves the player
         this.player.move();   
         
         //create/remove obstacle
-        console.log("size of obstacles array", this.obstacles.length);
         for (let i = 0; i < this.obstacles.length; i++) {
             const obstacle = this.obstacles[i];
             obstacle.move();
             if (this.didCollide(obstacle)) {
               obstacle.updateStatistics(this.player); 
               obstacle.element.remove();
-              console.log("obstacle collided and removed");
               this.obstacles.splice(i, 1);
               i--;
             }
             else if (obstacle.top > 41) {
               obstacle.element.remove();
-              console.log("obstacle did not collide and removed");
               this.obstacles.splice(i, 1);
               i--;
                  }
@@ -83,6 +110,9 @@ class Game {
         }
         document.getElementById('health').textContent = this.player.health;
         document.getElementById('money').textContent = this.player.money;
+
+     
+  
         this.addObstacle();
     }
 
@@ -90,19 +120,16 @@ class Game {
     const random = Math.random();
     if (random > 0.80 && random <= 0.98 && this.obstacles.length < 10) {
       let randomStartPosition = Math.floor(Math.random() * 5);
-      console.log("random2", randomStartPosition);
       this.obstacles.push(new GoodObstacle(this.gameScreen, randomStartPosition));
     }
 
     if (random > 0 && random < 0.20 && this.obstacles.length < 10) {
       let randomStartPosition = Math.floor(Math.random() * 5);
-      console.log("random", randomStartPosition);
       this.obstacles.push(new BadObstacle(this.gameScreen, randomStartPosition));
     }
 
     if (random > 0.98 && this.obstacles.length < 10) {
       let randomStartPosition = Math.floor(Math.random() * 5);
-      console.log("random", randomStartPosition);
       this.obstacles.push(new Money(this.gameScreen, randomStartPosition));
     }
   }
@@ -125,34 +152,16 @@ class Game {
         
     }
 
-      
-
-  endGame() {
-    this.player.element.remove(); // remove the player car from the screen
-    this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
-
-    this.gameIsOver = true; // cancel the execution of gameLoop()
-
-    // Hide game container
-    this.gameContainer.style.display = 'flex';
-    // Show end game screen
-    this.gameEndOrLevelScreen.style.display = "block";
-  }
-    
-
-  /**
-   * Case 1
-   * when player collides with money -> add game.money = game.money + obstacle.cost;
-   * 
-   * Case 2
-   * when player collides with Bad obstacle -> subtract game.money-obstacle.cost  , subtract game.heath - obstacle.liability
-   * 
-   * Case 3
-   * when player collides with Good obstacle --> add  game.money + obstacle.cost  , game.health + obstacle.boost
-   * 
-   * 
-   * Case 4
-   * 
-   * 
-   */
+    endGame() {
+      console.log("insided end Game");
+      this.player.element.remove(); // remove the player from the screen
+      this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
+  
+      this.isGameOver = true; // cancel the execution of gameLoop()
+  
+      // Hide game container
+      this.gameContainer.style.display = 'flex';
+      // Show end game screen
+      this.gameEndOrLevelScreen.style.display = "block";
+    }
 }

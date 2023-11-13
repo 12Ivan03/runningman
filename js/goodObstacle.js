@@ -26,7 +26,6 @@ class GoodObstacle extends Obstacle {
     }
 
     updateStatistics(player){
-        console.log("updating good stats")
         if(player.money >= this.randomCost){
             player.money -= this.randomCost;
             player.health += this.randomBoost;
