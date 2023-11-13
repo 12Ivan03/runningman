@@ -1,6 +1,4 @@
 class Money extends Obstacle {
-
-
     constructor(gameScreen, startPosition){
        const moneyObstacleImg = [
         {
