@@ -28,8 +28,10 @@ class BadObstacle extends Obstacle {
     }
     
     updateStatistics(player){
-        player.health -= this.randomLiability;
-        player.money -= this.randomCost;
+        if(player.money >= this.randomCost){
+            player.health -= this.randomLiability;
+            player.money -= this.randomCost;
+        }
     }
    
 }

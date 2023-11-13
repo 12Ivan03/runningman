@@ -11,6 +11,7 @@ class Game {
         
         this.gameContainer = document.getElementById('game-container');
         this.gameScreen = document.getElementById('game-screen');
+        this.gameEndOrLevelScreen = document.getElementById('level-or-game-end');
         this.width = "100vw";
         this.height = "100vh";
         //Player 
@@ -52,29 +53,12 @@ class Game {
         console.log("size of obstacles array", this.obstacles.length);
         for (let i = 0; i < this.obstacles.length; i++) {
             const obstacle = this.obstacles[i];
-            // const scoreObs = this.obstacle[i].score.health
-            // const scoreObs = this.obstacle[i].score.money
-
-           
-            if(obstacle instanceof BadObstacle){
-              console.log("instance of BadObstacle")
-            } else if (obstacle instanceof GoodObstacle){
-              console.log("instance of good obstacle")
-            } else if (obstacle instanceof Money){
-              console.log("instance of Money");
-            }
-
             obstacle.move();
-            // console.log("obstacle", obstacle);
             if (this.didCollide(obstacle)) {
               obstacle.updateStatistics(this.player); 
               obstacle.element.remove();
               console.log("obstacle collided and removed");
               this.obstacles.splice(i, 1);
-              this.health -= 5
-              document.getElementById('health').textContent -= this.health;
-              //this.health--;
-              //document.getElementById('health').textContent -= this.health;
               i--;
             }
             else if (obstacle.top > 41) {
@@ -85,10 +69,20 @@ class Game {
                  }
           }
       
-        // if (this.health === 0) {
-        //     this.endGame();
-        // }
-        
+        //Game end logic
+        if(this.player.health <= 0){
+          this.player.health = 0;
+          this.endGame();
+        } else if(this.player.health < 60 && this.player.money === 0){
+          this.endGame();
+        }
+
+        if(this.player.health > 100){
+          this.player.health = 100;
+        }
+        if(this.player.money <= 0){
+          this.player.money = 0;
+        }
         document.getElementById('health').textContent = this.player.health;
         document.getElementById('money').textContent = this.player.money;
         this.addObstacle();
@@ -96,19 +90,19 @@ class Game {
 
   addObstacle() {
     const random = Math.random();
-    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 1) {
+    if (random > 0.80 && random <= 0.98 && this.obstacles.length < 2) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random2", randomStartPosition);
       this.obstacles.push(new GoodObstacle(this.gameScreen, randomStartPosition));
     }
 
-    if (random > 0 && random < 0.20 && this.obstacles.length < 1) {
+    if (random > 0 && random < 0.20 && this.obstacles.length < 2) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random", randomStartPosition);
       this.obstacles.push(new BadObstacle(this.gameScreen, randomStartPosition));
     }
 
-    if (random > 0.98 && this.obstacles.length < 1) {
+    if (random > 0.98 && this.obstacles.length < 2) {
       let randomStartPosition = Math.floor(Math.random() * 5);
       console.log("random", randomStartPosition);
       this.obstacles.push(new Money(this.gameScreen, randomStartPosition));
@@ -133,6 +127,19 @@ class Game {
         
     }
 
+      
+
+  endGame() {
+    this.player.element.remove(); // remove the player car from the screen
+    this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
+
+    this.gameIsOver = true; // cancel the execution of gameLoop()
+
+    // Hide game container
+    this.gameContainer.style.display = 'flex';
+    // Show end game screen
+    this.gameEndOrLevelScreen.style.display = "block";
+  }
     
 
   /**
