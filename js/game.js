@@ -19,6 +19,7 @@ class Game {
         //obstacle container
         this.obstacles = [];
 
+        this.clounds = []
 
         this.isGameOver = false;
           //Game properties
@@ -31,7 +32,6 @@ class Game {
         this.instructionScreen.style.display = 'none';
         this.gameContainer.style.display = 'flex';
         this.gameLoop();
-        
     }
 
     gameLoop(){

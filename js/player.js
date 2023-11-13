@@ -1,9 +1,9 @@
 class Player {
 
     constructor(gameScreen, imgSrc){
-        this.top = 30;
-        this.left = 38;
-        this.gameScreen = document.getElementById('game-screen');
+        this.top = 80;
+        this.left = 44;
+        this.gameScreen = document.getElementById('game-container');
         
         //player image
         this.element = document.createElement('img');
@@ -35,30 +35,35 @@ class Player {
       this.left += this.directionX;
       this.top += this.directionY;
       
-     
-      if (this.left < 3) {
-        this.left = 3;
+      // Left and right 
+      if (this.left < 4) {
+        this.left = 4; //left
+      }
+       
+      if (this.left > 91) {
+        this.left = 91; //right
       }
     
-      if (this.top < 17) {
-        this.top = 17;
+      // up and down
+          
+      if (this.top > 80) {
+        this.top = 80; //down
+      }
+          
+      if (this.top < 67) {
+        this.top = 67; //up
       } 
       
-      if (this.top < 26 && this.left < 7 )  {
-        this.left = 7
+      // up - right <<>> up-left
+              //left
+      if (this.top < 73 && this.left < 9)  {
+        this.left = 9
       }
-
-      if (this.top < 26 && this.left > 85 )  {
-        this.left = 85
+              //right
+      if (this.top < 75 && this.left > 84)  {
+        this.left = 84;
       }
-     
-      if (this.left > 90) {
-        this.left = 90;
-      }
-    
-      if (this.top > 32) {
-        this.top = 32;
-      }
+  
       
 
 

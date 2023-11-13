@@ -172,20 +172,16 @@ body {
     height: 50vh;
     width: 100vw;
     background-color: rgb(71, 186, 201); 
-    animation: cloud 300s linear infinite ;
+    animation: cloud 500s linear infinite ;
 } 
 
-/* display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    background-image: url(../images/cartoonCloud.png); 
-    background-size: cover;
-    background-position: bottom;
-    height: 50vh;
-    width: 100vw;
-    background-color: rgb(71, 186, 201); 
+/* #clouds {
+    position: absolute;
+    background-image: url(../images/cartoonCloud.png);
     animation: cloud 10s linear infinite ;
-}  */
+    height: 100vh;
+    width: 100vw;
+} */
 
 @keyframes cloud {
     0% {
