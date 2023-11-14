@@ -109,15 +109,15 @@ class Game {
     //Game end logic
     if (this.player.health <= 0) {
       this.player.health = 0;
-      this.gameIsOver = true;
+      this.isGameOver = true;
       this.endGame();
     } else if (this.player.health < 60 && this.player.distance === 0 && this.level === 1) {
-      this.gameIsOver = true;
+      this.isGameOver = true;
       this.endGame();
     } else if (this.player.health >= 60 && this.player.distance === 0 && this.level === 1) {
       this.nextLevel();
     } else if (this.player.health < 80 && this.player.distance === 0 && this.level === 2) {
-      this.gameIsOver = true;
+      this.isGameOver = true;
       this.endGame();
     } else if (this.player.health >= 80 && this.player.distance === 0 && this.level === 2) {
       this.winGame()
@@ -186,7 +186,7 @@ class Game {
   }   
   
   winGame() {
-    this.gameIsOver = true;
+    this.isGameOver = true;
     // get score 
     //document.getElementById('health-next-level').textContent = this.player.health;
     //document.getElementById('money-next-level').textContent = this.player.money;
@@ -204,7 +204,7 @@ class Game {
     congratsMessage.textContent = "Congratulations";
     
     const youWinMessage = document.createElement('p');
-    congratsMessage.setAttribute("class","win-text")
+    youWinMessage.setAttribute("class","win-text")
     youWinMessage.textContent = "YOU WON";
     //populte the div with children
     nextLevelBtn.appendChild(congratsMessage);
@@ -225,7 +225,7 @@ class Game {
   }
 
   endGame() {
-    this.gameIsOver = true; // cancel the execution of gameLoop()
+    this.isGameOver = true; // cancel the execution of gameLoop()
 
     // Hide game container
     this.gameContainer.style.display = 'none';
