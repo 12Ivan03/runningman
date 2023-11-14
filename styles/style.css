@@ -20,15 +20,15 @@ body {
     height: 100vh;
 }
 
-#opening-screen button {
+#start{
     border-radius: 2rem;
-    font-weight: 600;
+    font-weight: 100;
     font-size: x-large;
     margin-bottom: 10rem;
-}
-
-#start{
-    border: 0px
+    border: 0px;
+    font-weight: 600;
+    height: 3rem;
+    width: 17rem;
 }
 
 #start:hover {  
@@ -37,7 +37,7 @@ body {
     color: rgb(94, 12, 12);
     font-weight: 800;
     cursor: pointer;
-    border: solid 3px #fff;
+    border: solid 3px rgb(158, 255, 13);
 }
 
 #opening-screen p {
@@ -69,7 +69,7 @@ body {
 #instructions h1 {
     text-align: center;
     font-size: 3rem;
-    margin: 10rem 0 2rem 0;
+    margin: 7rem 0 2rem 0;
 }
 
 #instructions p {
@@ -77,9 +77,16 @@ body {
     margin-bottom: 2rem;
 }
 
-
-#start-game{
-    border: 0px
+#start-game {
+    width: 17rem;
+    height: 6rem;
+    margin-bottom: 6.5rem;
+    font-weight: 700;
+    font-size: larger;
+    border-radius: 2rem;
+    border: 0;
+    font-weight: 600;
+    font-size: x-large;
 }
 
 #start-game:hover {  
@@ -87,13 +94,14 @@ body {
     cursor: pointer;
     background-color: rgb(158, 255, 13);
     color: rgb(94, 12, 12);
-    border: solid 5px #fff;
+    border: solid 3px rgb(158, 255, 13);
     font-weight: 800;
 }
 
 .instruction-info-buttons {
     display: flex;
     justify-content: space-around;
+    text-align: center;
     margin: 0 2em;
     height: 60vh;
 }
@@ -105,6 +113,7 @@ body {
 
 .button-instruction {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -142,16 +151,6 @@ body {
     width: 20vw;
 }
 
-.instruction, button {
-    width: 17rem;
-    height: 3rem;
-    margin-bottom: 6rem;
-    font-weight: 700;
-    font-size: larger;
-    border-radius: 2rem;
-    font-weight: 600;
-    font-size: x-large;
-}
 
 /* game container - screen III */
 
@@ -164,17 +163,43 @@ body {
 
 #skyline {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
-    background-image: url(../images/beautiful-landscape-view-ocean.jpg);
+    justify-content: space-between;
+    background-image: url(../images/cartoonCloud.png); 
     background-size: cover;
     background-position: bottom;
     height: 50vh;
     width: 100vw;
-}
+    background-color: rgb(71, 186, 201); 
+    animation: cloud 500s linear infinite ;
+} 
+
+/* #clouds {
+    position: absolute;
+    background-image: url(../images/cartoonCloud.png);
+    animation: cloud 10s linear infinite ;
+    height: 100vh;
+    width: 100vw;
+} */
+
+@keyframes cloud {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -1000px;
+    }
+  }
 
 .live-stats {
     padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.live-stats p { 
+    margin-bottom: 2rem;
+    font-size: x-large;
 }
 
 #game-screen {
@@ -194,10 +219,9 @@ body {
     justify-content: center;
     background-image: url(../images/road-strip.png);
     background-size: cover;
-    animation: slide 5s linear infinite;
-    width: 2vw;
-    height: 72vh;
-    animation: slide 3s linear infinite;
+    animation: slide 7s linear infinite;
+    width: 1vw;
+    height: 74vh;
     z-index: 1;
     position: fixed;
     overflow: hidden;
@@ -262,10 +286,25 @@ body {
 
 #level-or-game-end div:first-of-type div:first-of-type p{
     margin: 1rem 0 2rem 0;
+  
 }
 
-#level-or-game-end div:first-of-type button {
+#level-or-game-end div:first-of-type button:first-of-type {
     width: 30rem;
+    height: 3rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    font-size: x-large;
+    border:3px
+}
+
+#next-level:hover {
+    cursor: pointer;
+    background-color: rgb(158, 255, 13);
+    border: solid 3px rgb(158, 255, 13);
+    color: rgb(94, 12, 12);
+    font-weight: 900;
+    opacity: 0.9;
 }
 
 #level-or-game-end div:last-of-type {
@@ -274,18 +313,21 @@ body {
 
 /* buttons */
 
-#level-or-game-end div:first-of-type button {
-    border: 0px;
-}
-
 #level-or-game-end div:last-of-type button {
     border: 0px;
-}
-
-#level-or-game-end div:first-of-type button:hover {
-    opacity: 0.5;
+    width: 10rem;
+    height: 2.8rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
 }
 
 #level-or-game-end div:last-of-type button:hover {
-    opacity: 0.5;
+    opacity: 0.8;
+    cursor: pointer;
+    color: rgb(94, 12, 12);
+    border: solid 3px rgb(158, 255, 13);
+    background-color: rgb(158, 255, 13);
+    font-weight: 800;
 }

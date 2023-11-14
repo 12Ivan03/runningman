@@ -21,7 +21,7 @@
             <p>Running Man Adventure</p>
 
             <div class="instruction-info-buttons">
-                <p>Welcome to the Running Man Adventure game! In this fast-paced race, your goal is to guide the running man through various challenges and obstacles.</p>
+                    <p>Welcome to the Running Man Adventure game! Your mission is to navigate the running man through challenges and obstacles. Be quick on your feet and agile in your decisions! Avoid collisions with tempting fast food,  Instead, seek healthy options to boost your health. Keep an eye out for scattered money along the way - collect it to unlock access to the nourishing food that will fuel your progress.</p>
 
                     <div class="button-instruction">
                         <p> Use the following keys to control your character:</p>
@@ -30,14 +30,14 @@
                                 <img src="./images/arrows.png" alt="keyboard arrrows">
                                 <p>left up down right  </p>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <img src="./images/C-jump png.png" alt="c for jump">
                                 <p>C for duck</p>
                             </div>
                             <div>
                                 <img src="./images/space_bar.png" alt="spacebar">
                                 <p>space for jump</p>
-                            </div>
+                            </div> -->
                     </div>
             </div>
             <button id="start-game">Start Game</button>
@@ -46,14 +46,15 @@
         <!-- Game Screen -->
         <div id="game-container">
             <div id="skyline">
-                <!-- <img src="./images/beautiful-landscape-view-ocean.jpg"/> -->
+                <!-- <div id="clouds"></div> -->
                 <div class="live-stats">
                     <p>Health: <span id="health">100</span> %</p>
                     <p>Resources: $ <span id="money">0</span></p>
                 </div>
+                <!-- <div id="colision-hapens">-5 $</div> -->
                 <div class="live-stats">
                     <p>Speed: <span id="speed">0</span> Klm/sec</p>
-                    <p>Distance: <span id="distance">40</span> Klm</p>
+                    <p>Distance: <span id="distance">20</span> Klm</p>
                 </div>
             </div>
             <!-- #game-screen is initially hidden using CSS style display: none -->
@@ -71,10 +72,10 @@
 
                 <h2 class="next-level-or-end-game"></h2>
                 <div>
-                    <p>Health: <span id="health">100</span> %</p>
-                    <p>Resources: $ <span id="money">0</span></p>
-                    <p>Speed: <span id="speed">0</span> Klm/sec</p>
-                    <p>Distance: <span id="distance">40</span> Klm</p>
+                    <p>Health: <span id="health-next-level">100</span> %</p>
+                    <p>Resources: $ <span id="money-next-level">0</span></p>
+                    <p>Speed: <span id="speed-next-level">0</span> Klm/sec</p>
+                    <p>Distance: <span id="distance-next-level">20</span> Klm</p>
                 </div>
                 <button id="next-level">Continue to next level</button>
 
@@ -86,8 +87,10 @@
         </div>
 
     </main>
-
     <script type="text/javascript" src="./js/obstacle.js"></script>
+    <script type="text/javascript" src="./js/money.js"></script>
+    <script type="text/javascript" src="./js/badObstacle.js"></script>
+    <script type="text/javascript" src="./js/goodObstacle.js"></script>
     <script type="text/javascript" src="./js/player.js"></script>
     <script type="text/javascript" src="./js/game.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
