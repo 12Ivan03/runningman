@@ -209,7 +209,7 @@ class Game {
     this.gameEndOrLevelScreen.style.justifyContent = "center";
     this.gameEndOrLevelScreen.style.alignContent = "center"
     this.gameEndOrLevelScreen.style.backgroundColor = "aquamarine";
-    this.gameEndOrLevelScreen.style.backgroundImage = "url(../images/winBang.png)";
+    this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/winBang.png)";
     this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
 
     this.player.element.remove(); // remove the player car from the screen
@@ -227,7 +227,7 @@ class Game {
     const nextBtn = document.getElementById('level-or-game-end');
     nextBtn.firstElementChild.style.display = "none";
     this.gameEndOrLevelScreen.style.justifyContent = "flex-end";
-    this.gameEndOrLevelScreen.style.backgroundImage = "url(../images/GameOverBang2.png)";
+    this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/GameOverBang2.png)";
     this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
     this.gameEndOrLevelScreen.style.backgroundColor = "blue";
 
