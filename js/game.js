@@ -115,6 +115,7 @@ class Game {
       this.isGameOver = true;
       this.endGame();
     } else if (this.player.health >= 60 && this.player.distance === 0 && this.level === 1) {
+      this.isGameOver = true;
       this.nextLevel();
     } else if (this.player.health < 80 && this.player.distance === 0 && this.level === 2) {
       this.isGameOver = true;
@@ -182,23 +183,18 @@ class Game {
     this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
     this.gameContainer.style.display = 'none';
     this.gameEndOrLevelScreen.style.display = "flex";
-    this.nextLevelBtn.click()
+    //this.nextLevelBtn.click()
   }   
   
   winGame() {
     this.isGameOver = true;
-    // get score 
-    //document.getElementById('health-next-level').textContent = this.player.health;
-    //document.getElementById('money-next-level').textContent = this.player.money;
-    //change screens 
+
     this.gameContainer.style.display = 'none';
     this.gameEndOrLevelScreen.style.display = "flex";
-    //remove scores from the screen
+
     const nextLevelBtn = document.getElementById('level-or-game-end');
     nextLevelBtn.firstElementChild.style.display = "none";
-    // make div 
-    //const WinMessages = document.createElement('div')
-    // make children with content
+
     const congratsMessage = document.createElement('p');
     congratsMessage.setAttribute("class","win-text")
     congratsMessage.textContent = "Congratulations";
@@ -206,20 +202,16 @@ class Game {
     const youWinMessage = document.createElement('p');
     youWinMessage.setAttribute("class","win-text")
     youWinMessage.textContent = "YOU WON";
-    //populte the div with children
+
     nextLevelBtn.appendChild(congratsMessage);
     nextLevelBtn.appendChild(youWinMessage);
-    //nextLevelBtn.appendChild(WinMessages);
-    // organise the screen
+
     this.gameEndOrLevelScreen.style.justifyContent = "center";
     this.gameEndOrLevelScreen.style.alignContent = "center"
     this.gameEndOrLevelScreen.style.backgroundColor = "aquamarine";
-    this.gameEndOrLevelScreen.style.backgroundImage = "url(../images/winBang.png)";
+    this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/winBang.png)";
     this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
-    //organise the text 
 
-
-    //remove PLayer and obstacles from the creen
     this.player.element.remove(); // remove the player car from the screen
     this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
   }
@@ -235,7 +227,7 @@ class Game {
     const nextBtn = document.getElementById('level-or-game-end');
     nextBtn.firstElementChild.style.display = "none";
     this.gameEndOrLevelScreen.style.justifyContent = "flex-end";
-    this.gameEndOrLevelScreen.style.backgroundImage = "url(../images/GameOverBang2.png)";
+    this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/GameOverBang2.png)";
     this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
     this.gameEndOrLevelScreen.style.backgroundColor = "blue";
 
