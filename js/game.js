@@ -6,7 +6,7 @@
  */
 class Game {
 
-    constructor(health, money){
+    constructor(health, money, level){
         this.instructionScreen = document.getElementById('instructions');
         
         this.gameContainer = document.getElementById('game-container');
@@ -22,6 +22,8 @@ class Game {
 
         this.isGameOver = false;
           //Game properties
+
+        this.level = level;
         
     }
 
@@ -93,11 +95,16 @@ class Game {
           this.player.health = 0;
           this.gameIsOver = true;
           this.endGame();
-        } else if(this.player.health < 60 && this.player.distance === 0){
+        } else if(this.player.health < 60 && this.player.distance === 0 && this.level === 1){
           this.gameIsOver = true;
           this.endGame();
-        } else if(this.player.health >= 60 && this.player.distance === 0){
+        } else if(this.player.health >= 60 && this.player.distance === 0 && this.level === 1){
           this.nextLevel();
+        } else if(this.player.health < 80 && this.player.distance === 0 && this.level === 2){
+          this.gameIsOver = true;
+          this.endGame();
+        } else if(this.player.health >= 80 && this.player.distance === 0 && this.level === 2){
+          this.winGame()
         }
 
         if(this.player.health > 100){
@@ -158,7 +165,11 @@ class Game {
     this.gameContainer.style.display = 'none';
     this.gameEndOrLevelScreen.style.display = "flex";
     startGameBtn.click()
-  }    
+  }   
+  
+  winGame() {
+    
+  }
 
   endGame() {
     this.gameIsOver = true; // cancel the execution of gameLoop()
@@ -170,15 +181,13 @@ class Game {
     // End creen changes
     const nextBtn = document.getElementById('level-or-game-end');
     nextBtn.firstElementChild.style.display = "none";
-    nextBtn.lastChild.style.top = "70vh"
+    this.gameEndOrLevelScreen.style.justifyContent = "flex-end";
     this.gameEndOrLevelScreen.style.backgroundImage = "url(../images/GameOverBang2.png)";
-    this.gameEndOrLevelScreen.style.backgroundPosition = "80vh 80vw"
+    this.gameEndOrLevelScreen.style.backgroundPosition = "center"
     this.gameEndOrLevelScreen.style.backgroundColor = "blue";
     
     this.player.element.remove(); // remove the player car from the screen
     this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
-
-
   }
 
 }

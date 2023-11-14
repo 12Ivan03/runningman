@@ -21,7 +21,7 @@ window.onload = function () {
 
     // instruction btn - to the game container
     startGameBtn.addEventListener('click', function(){
-        game = new Game(100, 50);
+        game = new Game(100, 50, 1);
         game.start();
     })
 
@@ -34,7 +34,7 @@ window.onload = function () {
     nextLevelBtn.addEventListener('click', function(){
         const healthPreviousLevel = game.player.health;
         const moneyPreviousLevel = game.player.money;
-        game = new Game(healthPreviousLevel, moneyPreviousLevel);
+        game = new Game(healthPreviousLevel, moneyPreviousLevel, 2);
         game.start();
     })
 
