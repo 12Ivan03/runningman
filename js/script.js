@@ -9,7 +9,7 @@ window.onload = function () {
 
     const openingScreen = document.getElementById('opening-screen');
     const instruction = document.getElementById('instructions');
-    const gameContainer = document.getElementById('game-container');
+    // const gameContainer = document.getElementById('game-container');
 
     let game;
 
