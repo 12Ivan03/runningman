@@ -69,7 +69,7 @@ body {
 #instructions h1 {
     text-align: center;
     font-size: 3rem;
-    margin: 10rem 0 2rem 0;
+    margin: 7rem 0 2rem 0;
 }
 
 #instructions p {
@@ -77,9 +77,16 @@ body {
     margin-bottom: 2rem;
 }
 
-
-#start-game{
-    border: 0px
+#start-game {
+    width: 17rem;
+    height: 6rem;
+    margin-bottom: 6.5rem;
+    font-weight: 700;
+    font-size: larger;
+    border-radius: 2rem;
+    border: 0;
+    font-weight: 600;
+    font-size: x-large;
 }
 
 #start-game:hover {  
@@ -94,6 +101,7 @@ body {
 .instruction-info-buttons {
     display: flex;
     justify-content: space-around;
+    text-align: center;
     margin: 0 2em;
     height: 60vh;
 }
@@ -105,6 +113,7 @@ body {
 
 .button-instruction {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
@@ -142,16 +151,6 @@ body {
     width: 20vw;
 }
 
-#start-game {
-    width: 17rem;
-    height: 5rem;
-    margin-bottom: 8rem;
-    font-weight: 700;
-    font-size: larger;
-    border-radius: 2rem;
-    font-weight: 600;
-    font-size: x-large;
-}
 
 /* game container - screen III */
 
@@ -296,9 +295,7 @@ body {
     border-radius: 2rem;
     font-weight: 900;
     font-size: x-large;
-    color: rgb(94, 12, 12);
-    background-color: rgb(158, 255, 13);
-    border: solid 3px rgb(158, 255, 13);
+    border:3px
 }
 
 #next-level:hover {
@@ -323,18 +320,14 @@ body {
     border-radius: 2rem;
     font-weight: 900;
     font-size: x-large;
-    color: rgb(94, 12, 12);
-    background-color: rgb(158, 255, 13);
-}
-
-#level-or-game-end div:first-of-type button:hover {
-    opacity: 0.9;
-    cursor: pointer;
-    color: rgb(94, 12, 12);
-    border: solid 3px rgb(158, 255, 13);
-    font-weight: 800;
+    color: rgb(0, 0, 0);
 }
 
 #level-or-game-end div:last-of-type button:hover {
-    opacity: 0.5;
+    opacity: 0.8;
+    cursor: pointer;
+    color: rgb(94, 12, 12);
+    border: solid 3px rgb(158, 255, 13);
+    background-color: rgb(158, 255, 13);
+    font-weight: 800;
 }
