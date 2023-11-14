@@ -15,14 +15,13 @@ window.onload = function () {
 
     // start btn - to instruction btn
     startBtn.addEventListener('click', function() {
-        console.log('click');
         openingScreen.style.display = "none";
         instruction.style.display = "flex";
     } )
 
     // instruction btn - to the game container
     startGameBtn.addEventListener('click', function(){
-        game = new Game();
+        game = new Game(100, 50);
         game.start();
     })
 
@@ -31,19 +30,13 @@ window.onload = function () {
         restartGame()
     })
 
-
-
     //Next level btn 
     nextLevelBtn.addEventListener('click', function(){
-        this.player.health = 70;
-        this.gameContainer.style.display = "flex";
-        this.gameEndOrLevelScreen.style.display = "none";
-        
+        const healthPreviousLevel = game.player.health;
+        const moneyPreviousLevel = game.player.money;
+        game = new Game(healthPreviousLevel, moneyPreviousLevel);
+        game.start();
     })
-
-
-
-
 
     function restartGame() {
         location.reload();
@@ -51,7 +44,6 @@ window.onload = function () {
 
     // Function to handle the jump
     function jump(player) {
-        console.log("entered jump", player);
         player.element.style.transform = 'translateY(-225px)';
         setTimeout(() => {
             player.element.style.transform = 'translateY(-225px)';
@@ -62,8 +54,6 @@ window.onload = function () {
       
     function handleKeydown(event) {
         const code = event.code;
-        console.log("event", event);
-        console.log("code", code)
         const possibleKeystrokes = [
           "ArrowLeft",
           "ArrowUp",
@@ -76,27 +66,21 @@ window.onload = function () {
         // Check if the pressed key is in the possibleKeystrokes array
         if (possibleKeystrokes.includes(code)) {
           event.preventDefault();
-          console.log("entered line 64 code", code);
           // Update player's directionX and directionY based on the key pressed
           switch (code) {
             case "ArrowLeft":
-              console.log("code", code);
               game.player.directionX = -1;
               break;
             case "ArrowUp":
-              console.log("code", code);
               game.player.directionY = -1;
               break;
             case "ArrowRight":
-              console.log("code", code);
               game.player.directionX = 1;
               break;
             case "ArrowDown":
-              console.log("code", code);
               game.player.directionY = 1;
               break;
             case "Space":
-                console.log("code", code);
               jump(game.player);
                break;
           }

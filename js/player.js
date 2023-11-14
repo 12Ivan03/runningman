@@ -1,6 +1,6 @@
 class Player {
 
-    constructor(gameScreen, imgSrc){
+    constructor(gameScreen, imgSrc, health, money){
         this.top = 80;
         this.left = 44;
         this.gameScreen = document.getElementById('game-container');
@@ -25,8 +25,8 @@ class Player {
          this.distance = 20; // Level1-20kms
          this.speed = 1/3; 
          //player property 
-         this.health = 100;
-         this.money = 25;
+         this.health = health;
+         this.money = money;
       
 
     }
