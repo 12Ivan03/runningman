@@ -15,7 +15,7 @@ class Game {
     // this.width = "100vw";
     // this.height = "100vh";
     //Player 
-    this.player = new Player(this.gameScreen, "../images/therunningman.png", health, money);
+    this.player = new Player(this.gameScreen, "./images/therunningman.png", health, money);
 
     //obstacle container
     this.obstacles = [];

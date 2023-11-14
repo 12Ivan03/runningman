@@ -4,17 +4,17 @@ class GoodObstacle extends Obstacle {
     constructor(gameScreen, startPosition){
         const goodObstacleImg = [
             {
-                image: "../images/avocado.png",
+                image: "./images/avocado.png",
                 cost: 15,
                 boost: 20
             }, 
             {
-                image: "../images/orange.png",
+                image: "./images/orange.png",
                 cost: 5,
                 boost: 10
             },
             {
-                image: "../images/apple.png",
+                image: "./images/apple.png",
                 cost: 10,
                 boost: 15
             }
