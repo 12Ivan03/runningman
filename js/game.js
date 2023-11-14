@@ -20,8 +20,6 @@ class Game {
         //obstacle container
         this.obstacles = [];
 
-        this.clounds = []
-
         this.isGameOver = false;
           //Game properties
         
@@ -73,9 +71,9 @@ class Game {
         if(this.player.health <= 0){
           this.player.health = 0;
           this.endGame();
-        } else if(this.player.health < 60 && this.player.money === 0){
+        } else if(this.player.health < 60 && this.player.distance === 0){
           this.endGame();
-        }
+        } 
 
         if(this.player.health > 100){
           this.player.health = 100;
@@ -127,7 +125,9 @@ class Game {
         
     }
 
-      
+  nextLevel(){
+
+  }    
 
   endGame() {
     this.player.element.remove(); // remove the player car from the screen
@@ -136,12 +136,12 @@ class Game {
     this.gameIsOver = true; // cancel the execution of gameLoop()
 
     // Hide game container
-    this.gameContainer.style.display = 'flex';
+    this.gameContainer.style.display = 'none';
     // Show end game screen
-    this.gameEndOrLevelScreen.style.display = "block";
-  }
+    this.gameEndOrLevelScreen.style.display = "flex";
     
 
+  }
   /**
    * Case 1
    * when player collides with money -> add game.money = game.money + obstacle.cost;

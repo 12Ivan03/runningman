@@ -287,10 +287,27 @@ body {
 
 #level-or-game-end div:first-of-type div:first-of-type p{
     margin: 1rem 0 2rem 0;
+  
 }
 
-#level-or-game-end div:first-of-type button {
+#level-or-game-end div:first-of-type button:first-of-type {
     width: 30rem;
+    height: 3rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    font-size: x-large;
+    color: rgb(94, 12, 12);
+    background-color: rgb(158, 255, 13);
+    border: solid 3px rgb(158, 255, 13);
+}
+
+#next-level:hover {
+    cursor: pointer;
+    background-color: rgb(158, 255, 13);
+    border: solid 3px rgb(158, 255, 13);
+    color: rgb(94, 12, 12);
+    font-weight: 900;
+    opacity: 0.9;
 }
 
 #level-or-game-end div:last-of-type {
@@ -299,16 +316,23 @@ body {
 
 /* buttons */
 
-#level-or-game-end div:first-of-type button {
-    border: 0px;
-}
-
 #level-or-game-end div:last-of-type button {
     border: 0px;
+    width: 10rem;
+    height: 2.8rem;
+    border-radius: 2rem;
+    font-weight: 900;
+    font-size: x-large;
+    color: rgb(94, 12, 12);
+    background-color: rgb(158, 255, 13);
 }
 
 #level-or-game-end div:first-of-type button:hover {
-    opacity: 0.5;
+    opacity: 0.9;
+    cursor: pointer;
+    color: rgb(94, 12, 12);
+    border: solid 3px rgb(158, 255, 13);
+    font-weight: 800;
 }
 
 #level-or-game-end div:last-of-type button:hover {

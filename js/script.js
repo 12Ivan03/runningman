@@ -1,7 +1,7 @@
 window.onload = function () {
     const startBtn = document.getElementById('start');
     const startGameBtn = document.getElementById('start-game');
-    // const nextLevelBtn = document.getElementById('next-level');
+    const nextLevelBtn = document.getElementById('next-level');
     const restartBtn = document.getElementById('restart-btn');
     
 
@@ -30,6 +30,20 @@ window.onload = function () {
     restartBtn.addEventListener('click', function(){
         restartGame()
     })
+
+
+
+    //Next level btn 
+    nextLevelBtn.addEventListener('click', function(){
+        this.player.health = 70;
+        this.gameContainer.style.display = "flex";
+        this.gameEndOrLevelScreen.style.display = "none";
+        
+    })
+
+
+
+
 
     function restartGame() {
         location.reload();
