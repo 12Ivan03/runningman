@@ -22,5 +22,11 @@ class Money extends Obstacle {
     
     updateStatistics(player){
        player.money += this.randomCoins;
+
+       const cost = this.randomCoins;
+       document.getElementById('colision-hapens').innerText = `+ $${cost}`;
+        setTimeout(function () {
+            document.getElementById('colision-hapens').innerText = "";
+        }, 1000);
     }
 }

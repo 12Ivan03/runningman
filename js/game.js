@@ -24,12 +24,11 @@ class Game {
     //Game properties
 
     this.level = level;
+    
 
   }
 
   start() {
-    // this.gameContainer.style.width = `${this.width}vw`;
-    // this.gameContainer.style.height = `${this.height}vh`;
     this.gameEndOrLevelScreen.style.display = "none";
     this.instructionScreen.style.display = 'none';
     this.gameContainer.style.display = 'flex';
@@ -107,6 +106,20 @@ class Game {
     }
 
     //Game end logic
+    this.executeWinLoseGameLogic();
+
+    if (this.player.health > 100) {
+      this.player.health = 100;
+    }
+    if (this.player.money <= 0) {
+      this.player.money = 0;
+    }
+    document.getElementById('health').textContent = `${this.player.health.toFixed(2)}`;
+    document.getElementById('money').textContent = `${this.player.money}`;
+    this.addObstacle();
+  }
+
+  executeWinLoseGameLogic() {
     if (this.player.health <= 0) {
       this.player.health = 0;
       this.isGameOver = true;
@@ -121,18 +134,8 @@ class Game {
       this.isGameOver = true;
       this.endGame();
     } else if (this.player.health >= 80 && this.player.distance === 0 && this.level === 2) {
-      this.winGame()
+      this.winGame();
     }
-
-    if (this.player.health > 100) {
-      this.player.health = 100;
-    }
-    if (this.player.money <= 0) {
-      this.player.money = 0;
-    }
-    document.getElementById('health').textContent = `${this.player.health.toFixed(2)}`;
-    document.getElementById('money').textContent = `${this.player.money}`;
-    this.addObstacle();
   }
 
   addObstacle() {
@@ -183,10 +186,12 @@ class Game {
     this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
     this.gameContainer.style.display = 'none';
     this.gameEndOrLevelScreen.style.display = "flex";
-    //this.nextLevelBtn.click()
   }   
   
   winGame() {
+    const preloadWinBangImg = new Image();
+    preloadWinBangImg.src = "./images/winBang.png";
+
     this.isGameOver = true;
 
     this.gameContainer.style.display = 'none';
@@ -208,15 +213,25 @@ class Game {
 
     this.gameEndOrLevelScreen.style.justifyContent = "center";
     this.gameEndOrLevelScreen.style.alignContent = "center"
-    this.gameEndOrLevelScreen.style.backgroundColor = "aquamarine";
-    this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/winBang.png)";
-    this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
+
+    preloadWinBangImg.onload = ()=> {
+      this.gameEndOrLevelScreen.style.backgroundColor = "aquamarine";
+      this.gameEndOrLevelScreen.style.backgroundImage = `url(${preloadWinBangImg.src})`;
+      this.gameEndOrLevelScreen.style.backgroundPosition = "cover";
+    }
+    // Error handling for image loading
+    preloadWinBangImg.onerror = (error)=> {
+      console.error("Error loading the winBang.png");
+    }
 
     this.player.element.remove(); // remove the player car from the screen
     this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
   }
 
   endGame() {
+    const preloadGameOverImg = new Image();
+    preloadGameOverImg.src = "./images/GameOverBang2.png";
+
     this.isGameOver = true; // cancel the execution of gameLoop()
 
     // Hide game container
@@ -227,9 +242,17 @@ class Game {
     const nextBtn = document.getElementById('level-or-game-end');
     nextBtn.firstElementChild.style.display = "none";
     this.gameEndOrLevelScreen.style.justifyContent = "flex-end";
-    this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/GameOverBang2.png)";
-    this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
-    this.gameEndOrLevelScreen.style.backgroundColor = "blue";
+
+    preloadGameOverImg.onload = ()=>{
+      this.gameEndOrLevelScreen.style.backgroundImage = `url(${preloadGameOverImg.src})`;
+      this.gameEndOrLevelScreen.style.backgroundPosition = "cover"
+      this.gameEndOrLevelScreen.style.backgroundColor = "blue";
+    };
+
+    // Error handling for image loading
+    preloadWinBangImg.onerror = (error)=> {
+      console.error("Error loading the GameOverBang2.png");
+    }
 
     this.player.element.remove(); // remove the player car from the screen
     this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
