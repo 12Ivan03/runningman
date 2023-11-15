@@ -24,23 +24,48 @@
                     <p>Welcome to the Running Man Adventure game! Your mission is to navigate the running man through challenges and obstacles. Be quick on your feet and agile in your decisions! Avoid collisions with tempting fast food,  Instead, seek healthy options to boost your health. Keep an eye out for scattered money along the way - collect it to unlock access to the nourishing food that will fuel your progress.</p>
 
                     <div class="button-instruction">
-                        <p> Use the following keys to control your character:</p>
 
-                            <div>
-                                <img src="./images/arrows.png" alt="keyboard arrrows">
-                                <p>left up down right  </p>
-                            </div>
-                            <!-- <div>
-                                <img src="./images/C-jump png.png" alt="c for jump">
-                                <p>C for duck</p>
-                            </div>
-                            <div>
-                                <img src="./images/space_bar.png" alt="spacebar">
-                                <p>space for jump</p>
-                            </div> -->
+                        <div>
+
+                           <table class="table-instruction">
+                            <thead>
+                                <th>HEALTHY Food</th>
+                                <th>FAST Food</th>
+                                <th>MONEY</th>
+                            </thead>
+                            <tr>
+                                <td>Apple $7</td>
+                                <td>Burger $3</td>
+                                <td><img class="obstacles-show" src="./images/coin.png" alt="One Coin"> $1</td>
+                            </tr>
+                            <tr>
+                                <td>Avocado $10</td>
+                                <td>Fries $2</td>
+                                <td><img class="obstacles-show" src="./images/coin3.png" alt="Stack Of Coins"> $3</td>
+                            </tr>
+                            <tr>
+                                <td>Ogange $5</td>
+                                <td>Donut $1</td>
+                                <td><img class="obstacles-show" src="./images/coin15.png" alt="Bag of Monet"> $15</td>
+                            </tr>
+                           </table> 
+
+                        </div>
+
+                        <p> Use the following keys to control your character:</p>
+                        <div>
+                            <img src="./images/arrows.png" alt="keyboard arrrows">
+                            <p>left up down right  </p>
+                        </div>
+                        <!-- <div>
+                            <img src="./images/space_bar.png" alt="spacebar">
+                            <p>space for jump</p>
+                        </div> -->
                     </div>
             </div>
+
             <button id="start-game">Start Game</button>
+        
         </div>
             
         <!-- Game Screen -->
@@ -51,7 +76,10 @@
                     <p>Health: <span id="health">100</span> %</p>
                     <p>Resources: $ <span id="money">0</span></p>
                 </div>
-                <div id="colision-hapens">+5 $</div>
+            
+                <p id="colision1"><span id="live-health">100</span> %</p>
+                <p id="colision2">$ <span id="live-money">0</span></p>
+               
                 <div class="live-stats">
                     <p>Speed: <span id="speed">0</span> Klm/sec</p>
                     <p>Distance: <span id="distance">20</span> Klm</p>

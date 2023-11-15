@@ -59,8 +59,8 @@ window.onload = function () {
           "ArrowUp",
           "ArrowRight",
           "ArrowDown",
-          "c",
-          "Space" //space
+          //"c",
+          //"Space" //space
         ];
     
         // Check if the pressed key is in the possibleKeystrokes array

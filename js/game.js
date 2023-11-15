@@ -206,7 +206,7 @@ class Game {
     nextLevelBtn.appendChild(congratsMessage);
     nextLevelBtn.appendChild(youWinMessage);
 
-    this.gameEndOrLevelScreen.style.justifyContent = "center";
+    this.gameEndOrLevelScreen.style.justifyContent = "flex-end";
     this.gameEndOrLevelScreen.style.alignContent = "center"
     this.gameEndOrLevelScreen.style.backgroundColor = "aquamarine";
     this.gameEndOrLevelScreen.style.backgroundImage = "url(./images/winBang.png)";

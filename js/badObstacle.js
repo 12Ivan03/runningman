@@ -33,5 +33,5 @@ class BadObstacle extends Obstacle {
             player.money -= this.randomCost;
         }
     }
-   
+    
 }
