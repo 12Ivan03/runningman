@@ -214,6 +214,13 @@ body {
     font-size: x-large;
 }
 
+ /* poping up - disappear  */
+#colision-hapens {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 1.5rem;
+}
+
 #game-screen {
     display: block;
     /* background-image: url(../images/road.jpg); */
@@ -354,15 +361,3 @@ body {
     text-shadow: 2px 4px 6px black;
 }
 
-/* colision show on the screen */
-#colision1 {
-    display: none;
-    align-items: flex-end;
-    padding-bottom: 1.5rem;
-}
-
-#colision2 {
-    display: none;
-    align-items: flex-end;
-    padding-bottom: 1.5rem;
-}

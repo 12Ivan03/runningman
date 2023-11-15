@@ -21,7 +21,8 @@ window.onload = function () {
 
     // instruction btn - to the game container
     startGameBtn.addEventListener('click', function(){
-        game = new Game(100, 50, 1);
+        //initial health = 100%, resource = 25$.
+        game = new Game(100, 25, 1);
         game.start();
     })
 
@@ -59,8 +60,7 @@ window.onload = function () {
           "ArrowUp",
           "ArrowRight",
           "ArrowDown",
-          //"c",
-          //"Space" //space
+          "Space" //space
         ];
     
         // Check if the pressed key is in the possibleKeystrokes array

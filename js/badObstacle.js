@@ -1,23 +1,24 @@
 class BadObstacle extends Obstacle {  
 
-   
-
     constructor(gameScreen, startPosition){
        const badObstacleImg = [
         {
+            name: "burger",
             image: "./images/burger.png",
-            cost: 2,
-            liability: 20 
+            cost: 3,
+            liability: 15 
         }, 
         {
+            name: "donut",
             image: "./images/donut.png",
             cost: 1,
-            liability: 10
+            liability: 5
         },
         {
+            name: "fries",
             image: "./images/fries.png",
-            cost: 5,
-            liability: 5
+            cost: 2,
+            liability: 10
         }
         ]
 
@@ -25,13 +26,23 @@ class BadObstacle extends Obstacle {
         super(gameScreen,randomBadObstacle, startPosition);
         this.randomCost = randomBadObstacle.cost;
         this.randomLiability = randomBadObstacle.liability;
+        this.randomObstacleName = randomBadObstacle.name;
     }
     
     updateStatistics(player){
         if(player.money >= this.randomCost){
             player.health -= this.randomLiability;
             player.money -= this.randomCost;
+
+            const cost = this.randomCost;
+            // const name = this.randomObstacleName;
+            const liability = this.randomLiability;
+            document.getElementById('colision-hapens').innerText = `- $${cost}  - ${liability}%`;
+            setTimeout(function(){
+                document.getElementById('colision-hapens').innerText = "";
+            }, 1000);
+            
         }
     }
-    
+   
 }
