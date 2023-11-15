@@ -69,18 +69,18 @@ body {
 #instructions h1 {
     text-align: center;
     font-size: 3rem;
-    margin: 7rem 0 2rem 0;
+    margin: 6rem 0 2rem 0;
 }
 
 #instructions p {
     font-size: 1.4rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0 0 0 ;
 }
 
 #start-game {
     width: 17rem;
-    height: 6rem;
-    margin-bottom: 6.5rem;
+    height: 3.5rem;
+    margin-bottom: 3rem;
     font-weight: 700;
     font-size: larger;
     border-radius: 2rem;
@@ -113,21 +113,20 @@ body {
 
 .button-instruction {
     display: flex;
-    justify-content: center;
+    margin: 2rem 0 0 0;
     flex-direction: column;
     align-items: center;
 }
 
-
 .button-instruction div {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 /* instruction btn arrow */
 .button-instruction div:first-of-type img {
-    height: 3rem;
-    margin-bottom: 1rem;
+    height: 1.5rem;
 } 
 
 .button-instruction div:first-of-type p {
@@ -151,6 +150,27 @@ body {
     width: 20vw;
 }
 
+/* table */
+.table-instruction {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-instruction th {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.612);
+    font-weight: 900;
+    
+}
+
+.table-instruction th, .table-instruction td {
+    padding: 0 1rem;
+    text-align: left;
+}
+
+.obstacles-show {
+    height: 0.5rem;
+}
 
 /* game container - screen III */
 
@@ -331,6 +351,13 @@ body {
     font-weight: 800;
 }
 
+/* end text */
 .win-text{
-
+    font-weight: bolder;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 2px 4px 6px black;
 }
+

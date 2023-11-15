@@ -27,8 +27,6 @@ class Player {
          //player property 
          this.health = health;
          this.money = money;
-      
-
     }
 
     move(){
@@ -63,9 +61,6 @@ class Player {
       if (this.top < 75 && this.left > 84)  {
         this.left = 84;
       }
-  
-      
-
 
       this.updatePosition();
     }
