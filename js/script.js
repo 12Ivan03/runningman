@@ -11,19 +11,19 @@ window.onload = function () {
     const instruction = document.getElementById('instructions');
     // const gameContainer = document.getElementById('game-container');
 
-    const backgroundSound = new AudioPlayer("../music-game/1-2ElevatorMusic.mp3");
-    backgroundSound.setVolume(0.2);
-    backgroundSound.loop();
+    const backgroundSound = new Audio("../music-game/1-2ElevatorMusic.mp3");
+    backgroundSound.volume = 0.2;
+    backgroundSound.loop = true;
 
-    const firstLevelSound = new AudioPlayer("../music-game/1LevelJohn-Bartmann-Allez-Allez.mp3");
-    firstLevelSound.setVolume(0.2);
-    firstLevelSound.loop();
+    const firstLevelSound = new Audio("../music-game/1LevelJohn-Bartmann-Allez-Allez.mp3");
+    firstLevelSound.volume = 0.2;
+    firstLevelSound.loop = true;
 
-    const secondLevelSound = new AudioPlayer("../music-game/5Cooking-Long-Version-2level.mp3");
-    secondLevelSound.setVolume(0.2);
-    secondLevelSound.loop();
+    const secondLevelSound = new Audio("../music-game/5Cooking-Long-Version-2level.mp3");
+    secondLevelSound.volume = 0.2;
+    secondLevelSound.loop = true;
 
-    const clickBtnSound = new AudioPlayer("../music-game/button-click-2.mp3");
+    const clickBtnSound = new Audio("../music-game/button-click-2.mp3");
 
     
     let game;

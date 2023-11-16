@@ -28,7 +28,7 @@ class GoodObstacle extends Obstacle {
         this.randomBoost = randomGoodObstacle.boost;
         this.randomObstacleName = randomGoodObstacle.name;
 
-        this.sound = new AudioPlayer("../music-game/good-crash.mp3");
+        this.sound = new Audio("../music-game/good-crash.mp3");
     }
 
     updateStatistics(player){
