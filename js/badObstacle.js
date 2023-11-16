@@ -28,7 +28,7 @@ class BadObstacle extends Obstacle {
         this.randomLiability = randomBadObstacle.liability;
         this.randomObstacleName = randomBadObstacle.name;
 
-        this.sound = new AudioPlayer("../music-game/bad-crash-maybe.wav");
+        this.sound = new Audio("../music-game/bad-crash-maybe.wav");
     }
     
     updateStatistics(player){
