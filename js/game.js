@@ -24,7 +24,6 @@ class Game {
     //Game properties
 
     this.level = level;
-<<<<<<< HEAD
     this.sound = sound;
 
     this.middleScreenAndWinSound = new AudioPlayer("../music-game/4win-screen.mp3");
@@ -34,17 +33,11 @@ class Game {
     this.loseScreenSound =  new AudioPlayer("../music-game/6Fluffing-a-Duck-Lse-Screen.mp3");
     this.loseScreenSound.setVolume(0.2);
     this.loseScreenSound.loop();
-=======
-    
->>>>>>> master
 
   }
 
   start() {
-<<<<<<< HEAD
     this.sound.play();  
-=======
->>>>>>> master
     this.gameEndOrLevelScreen.style.display = "none";
     this.instructionScreen.style.display = 'none';
     this.gameContainer.style.display = 'flex';
@@ -208,12 +201,9 @@ class Game {
   }   
   
   winGame() {
-<<<<<<< HEAD
     this.sound.pause();
     this.middleScreenAndWinSound.play();
 
-=======
->>>>>>> master
     const preloadWinBangImg = new Image();
     preloadWinBangImg.src = "./images/winBang.png";
 
@@ -254,12 +244,9 @@ class Game {
   }
 
   endGame() {
-<<<<<<< HEAD
     this.sound.pause();
     this.loseScreenSound.play();
 
-=======
->>>>>>> master
     const preloadGameOverImg = new Image();
     preloadGameOverImg.src = "./images/GameOverBang2.png";
 
