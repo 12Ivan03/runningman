@@ -27,10 +27,14 @@ class BadObstacle extends Obstacle {
         this.randomCost = randomBadObstacle.cost;
         this.randomLiability = randomBadObstacle.liability;
         this.randomObstacleName = randomBadObstacle.name;
+
+        this.sound = new AudioPlayer("../music-game/bad-crash-maybe.wav");
     }
     
     updateStatistics(player){
         if(player.money >= this.randomCost){
+            this.sound.play();
+
             player.health -= this.randomLiability;
             player.money -= this.randomCost;
 
@@ -42,6 +46,8 @@ class BadObstacle extends Obstacle {
                 document.getElementById('colision-hapens').innerText = "";
             }, 1000);
             
+        } else {
+            this.noSound.play();
         }
     }
    

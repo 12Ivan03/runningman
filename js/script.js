@@ -11,36 +11,59 @@ window.onload = function () {
     const instruction = document.getElementById('instructions');
     // const gameContainer = document.getElementById('game-container');
 
+    const backgroundSound = new AudioPlayer("../music-game/1-2ElevatorMusic.mp3");
+    backgroundSound.setVolume(0.2);
+    backgroundSound.loop();
+
+    const firstLevelSound = new AudioPlayer("../music-game/1LevelJohn-Bartmann-Allez-Allez.mp3");
+    firstLevelSound.setVolume(0.2);
+    firstLevelSound.loop();
+
+    const secondLevelSound = new AudioPlayer("../music-game/5Cooking-Long-Version-2level.mp3");
+    secondLevelSound.setVolume(0.2);
+    secondLevelSound.loop();
+
+    const clickBtnSound = new AudioPlayer("../music-game/button-click-2.mp3");
+
+    
     let game;
 
     // start btn - to instruction btn
     startBtn.addEventListener('click', function() {
+        clickBtnSound.play();
         openingScreen.style.display = "none";
         instruction.style.display = "flex";
+        backgroundSound.play();
     } )
 
     // instruction btn - to the game container
     startGameBtn.addEventListener('click', function(){
+        clickBtnSound.play();  
         //initial health = 100%, resource = 25$.
-        game = new Game(100, 25, 1);
+        game = new Game(100, 25, 1, firstLevelSound);
         game.start();
+        backgroundSound.pause();
     })
 
     //restart btn-refresh page 
     restartBtn.addEventListener('click', function(){
+        clickBtnSound.play();
         restartGame()
     })
 
     //Next level btn 
     nextLevelBtn.addEventListener('click', function(){
+        clickBtnSound.play();
         const healthPreviousLevel = game.player.health;
         const moneyPreviousLevel = game.player.money;
-        game = new Game(healthPreviousLevel, moneyPreviousLevel, 2);
+        game.middleScreenAndWinSound.pause();
+        game = new Game(healthPreviousLevel, moneyPreviousLevel, 2, secondLevelSound);
         game.start();
     })
 
     function restartGame() {
-        location.reload();
+        setTimeout(()=>location.reload(), 1000);
+        // location.reload();
     }
 
     // Function to handle the jump

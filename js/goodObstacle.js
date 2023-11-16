@@ -27,10 +27,14 @@ class GoodObstacle extends Obstacle {
         this.randomCost = randomGoodObstacle.cost;
         this.randomBoost = randomGoodObstacle.boost;
         this.randomObstacleName = randomGoodObstacle.name;
+
+        this.sound = new AudioPlayer("../music-game/good-crash.mp3");
     }
 
     updateStatistics(player){
         if(player.money >= this.randomCost){
+            this.sound.play();
+
             player.money -= this.randomCost;
             player.health += this.randomBoost;
             const cost = this.randomCost;
@@ -42,6 +46,8 @@ class GoodObstacle extends Obstacle {
                 document.getElementById('colision-hapens').innerText = "";
             }, 1000);
 
+        } else {
+            this.noSound.play();
         }
     }
 }

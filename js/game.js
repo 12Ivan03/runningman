@@ -6,7 +6,7 @@
  */
 class Game {
 
-  constructor(health, money, level) {
+  constructor(health, money, level, sound) {
     this.instructionScreen = document.getElementById('instructions');
 
     this.gameContainer = document.getElementById('game-container');
@@ -24,11 +24,20 @@ class Game {
     //Game properties
 
     this.level = level;
-    
+    this.sound = sound;
+
+    this.middleScreenAndWinSound = new AudioPlayer("../music-game/4win-screen.mp3");
+    this.middleScreenAndWinSound.setVolume(0.2);
+    this.middleScreenAndWinSound.loop();
+
+    this.loseScreenSound =  new AudioPlayer("../music-game/6Fluffing-a-Duck-Lse-Screen.mp3");
+    this.loseScreenSound.setVolume(0.2);
+    this.loseScreenSound.loop();
 
   }
 
   start() {
+    this.sound.play();  
     this.gameEndOrLevelScreen.style.display = "none";
     this.instructionScreen.style.display = 'none';
     this.gameContainer.style.display = 'flex';
@@ -179,6 +188,9 @@ class Game {
   }
 
   nextLevel() {
+    this.sound.pause();
+    this.middleScreenAndWinSound.play();
+
     document.getElementById('health-next-level').textContent = `${this.player.health.toFixed(2)}`;
     document.getElementById('money-next-level').textContent = `${this.player.money}`;
     document.getElementById('speed-next-level').textContent = `${this.player.speed.toFixed(2)}`;
@@ -189,6 +201,9 @@ class Game {
   }   
   
   winGame() {
+    this.sound.pause();
+    this.middleScreenAndWinSound.play();
+
     const preloadWinBangImg = new Image();
     preloadWinBangImg.src = "./images/winBang.png";
 
@@ -229,6 +244,9 @@ class Game {
   }
 
   endGame() {
+    this.sound.pause();
+    this.loseScreenSound.play();
+
     const preloadGameOverImg = new Image();
     preloadGameOverImg.src = "./images/GameOverBang2.png";
 
