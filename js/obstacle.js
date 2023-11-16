@@ -25,7 +25,7 @@ class Obstacle {
         //make the element
         this.gameScreen.appendChild(this.element);
 
-        this.noSound = new AudioPlayer("../music-game/bad-crash-MAybe-2.wav");
+        this.noSound = new Audio("../music-game/bad-crash-MAybe-2.wav");
 
     }
 

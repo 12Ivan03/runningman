@@ -19,7 +19,7 @@ class Money extends Obstacle {
         super(gameScreen,  randomMoney , startPosition);
         this.randomCoins = randomMoney.cost;
 
-        this.sound = new AudioPlayer("../music-game/money-crash.wav");
+        this.sound = new Audio("../music-game/money-crash.wav");
     }
     
     updateStatistics(player){
