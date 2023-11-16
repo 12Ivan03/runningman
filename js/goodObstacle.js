@@ -46,6 +46,8 @@ class GoodObstacle extends Obstacle {
                 document.getElementById('colision-hapens').innerText = "";
             }, 1000);
 
+        } else {
+            this.noSound.play();
         }
     }
 }

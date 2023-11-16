@@ -25,7 +25,8 @@ class Obstacle {
         //make the element
         this.gameScreen.appendChild(this.element);
 
-        // take points / make it in the game. update method /
+        this.noSound = new AudioPlayer("../music-game/bad-crash-MAybe-2.wav");
+
     }
 
     setStartingPositionOfObstacle(startPosition) {
