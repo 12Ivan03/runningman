@@ -19,7 +19,7 @@ class Money extends Obstacle {
         super(gameScreen,  randomMoney , startPosition);
         this.randomCoins = randomMoney.cost;
 
-        this.sound = new Audio("../music-game/money-crash.wav");
+        this.sound = new Audio("./music-game/money-crash.wav");
     }
     
     updateStatistics(player){
@@ -28,9 +28,12 @@ class Money extends Obstacle {
        player.money += this.randomCoins;
 
        const cost = this.randomCoins;
-       document.getElementById('colision-hapens').innerText = `+ $${cost}`;
+       const collisionElement = document.getElementById('colision-hapens');
+       collisionElement.innerText = `+ $${cost}`;
+       collisionElement.style.color = '#006600';
+       collisionElement.style.fontWeight = '700';
         setTimeout(function () {
-            document.getElementById('colision-hapens').innerText = "";
+            collisionElement.innerText = "";
         }, 1000);
     }
 }

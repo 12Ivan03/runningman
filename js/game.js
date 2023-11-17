@@ -26,11 +26,11 @@ class Game {
     this.level = level;
     this.sound = sound;
 
-    this.middleScreenAndWinSound = new Audio("../music-game/4win-screen.mp3");
+    this.middleScreenAndWinSound = new Audio("./music-game/4win-screen.mp3");
     this.middleScreenAndWinSound.volume = 0.2;
     this.middleScreenAndWinSound.loop = true;
 
-    this.loseScreenSound =  new Audio("../music-game/6Fluffing-a-Duck-Lse-Screen.mp3");
+    this.loseScreenSound =  new Audio("./music-game/6Fluffing-a-Duck-Lse-Screen.mp3");
     this.loseScreenSound.volume = 0.2;
     this.loseScreenSound.loop = true;
 
