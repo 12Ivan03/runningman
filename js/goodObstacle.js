@@ -28,7 +28,7 @@ class GoodObstacle extends Obstacle {
         this.randomBoost = randomGoodObstacle.boost;
         this.randomObstacleName = randomGoodObstacle.name;
 
-        this.sound = new Audio("../music-game/good-crash.mp3");
+        this.sound = new Audio("./music-game/good-crash.mp3");
     }
 
     updateStatistics(player){
@@ -40,14 +40,24 @@ class GoodObstacle extends Obstacle {
             const cost = this.randomCost;
             // const name = this.randomObstacleName;
             const boost = this.randomBoost;
-            document.getElementById('colision-hapens').innerText = `- $${cost}  + ${boost}%`;
+            const collisionElement = document.getElementById('colision-hapens');
+            collisionElement.innerText = `- $${cost}  + ${boost}%`;
+            collisionElement.style.color = 'green';
+            collisionElement.style.fontWeight = '700';
             
             setTimeout(function(){
-                document.getElementById('colision-hapens').innerText = "";
+                collisionElement.innerText = "";
             }, 1000);
 
         } else {
             this.noSound.play();
+            const collisionElement = document.getElementById('colision-hapens');
+            collisionElement.innerText = 'Low Cash :(';
+            collisionElement.style.color = 'black';
+            collisionElement.style.fontWeight = '700'; 
+            setTimeout(function(){
+                collisionElement.innerText = "";
+            }, 1000);
         }
     }
 }
