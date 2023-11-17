@@ -15,3 +15,7 @@ Welcome to the Running Man Adventure game! Your mission is to navigate the runni
 HTML5, CSS3 , JavaScript ES6
 
 **Credits**
+*Images:* https://www.pngwing.com/en/search?q=website 
+*Audio:* https://www.chosic.com/free-music/games/ , https://pixabay.com/music/search/genre/video%20games/ , https://www.zapsplat.com/sound-effect-category/game-music-and-loops/
+
+**Authors:** Vijay Bhatt, Ivan Pavlov
