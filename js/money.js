@@ -30,7 +30,7 @@ class Money extends Obstacle {
        const cost = this.randomCoins;
        const collisionElement = document.getElementById('colision-hapens');
        collisionElement.innerText = `+ $${cost}`;
-       collisionElement.style.color = 'green';
+       collisionElement.style.color = '#006600';
        collisionElement.style.fontWeight = '700';
         setTimeout(function () {
             collisionElement.innerText = "";

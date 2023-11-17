@@ -42,7 +42,7 @@ class GoodObstacle extends Obstacle {
             const boost = this.randomBoost;
             const collisionElement = document.getElementById('colision-hapens');
             collisionElement.innerText = `- $${cost}  + ${boost}%`;
-            collisionElement.style.color = 'green';
+            collisionElement.style.color = '#006600';
             collisionElement.style.fontWeight = '700';
             
             setTimeout(function(){
