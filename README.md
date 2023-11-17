@@ -31,3 +31,7 @@ Welcome to the Running Man Adventure game! Your mission is to navigate the runni
 - https://www.zapsplat.com/sound-effect-category/game-music-and-loops/
 
 **Authors:** Vijay Bhatt, Ivan Pavlov
+
+**How do I contribute?**  
+
+To contribute you have to *Fork* the project and *make a pull* request to the authors.
