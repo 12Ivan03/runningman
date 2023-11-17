@@ -8,14 +8,26 @@
 Welcome to the Running Man Adventure game! Your mission is to navigate the running man through challenges and obstacles. Be quick on your feet and agile in your decisions! Avoid collisions with tempting fast food, Instead, seek healthy options to boost your health. Keep an eye out for scattered money along the way - collect it to unlock access to the nourishing food that will fuel your progress.
 
 **Pre-requisite for running the game:**
-**Web Browser:** Chrome 119+ , Edge 119+
-**OS** - Windows 10+ , macOS Monterey
+
+**Web Browser:** 
+- Chrome 119+
+- Edge 119+
+
+**OS** 
+- Windows 10+
+- macOS Monterey
 
 **Tech Stack:**
-HTML5, CSS3 , JavaScript ES6
+- HTML5, CSS3, JavaScript ES6
 
 **Credits**
-*Images:* https://www.pngwing.com/en/search?q=website 
-*Audio:* https://www.chosic.com/free-music/games/ , https://pixabay.com/music/search/genre/video%20games/ , https://www.zapsplat.com/sound-effect-category/game-music-and-loops/
+
+*Images:* 
+- https://www.pngwing.com/en/search?q=website 
+
+*Audio:* 
+- https://www.chosic.com/free-music/games/
+- https://pixabay.com/music/search/genre/video%20games/ 
+- https://www.zapsplat.com/sound-effect-category/game-music-and-loops/
 
 **Authors:** Vijay Bhatt, Ivan Pavlov
